@@ -1,47 +1,191 @@
 # 自我介绍
 
-面试官您好，我是赵倩茹，非常荣幸能来参加此次面试。我毕业于杭州电子科技大学计算机技术专业。在前端开发领域，我积累了较为丰富的工作经验。2021 年 7 月 - 2025 年 2 月期间，我就职于北京转转精神科技有限公司担任前端工程师，主要负责公司支付和财务方向的项目。
+面试官您好！我是赵倩茹，毕业于杭州电子科技大学计算机技术专业。在前端开发领域，我积累了较为丰富的工作经验。在 2021 年 7 月至 2025 年 2 月任职于北京转转精神科技有限公司。
 
-## 收单路由
+任职期间，我的工作经历主要分为两个阶段：
 
-旨在打造一个能支持多种支付通道的配置化支付路由系统，满足用户多样化支付场景需求。
+**第一阶段**：主要负责订单交易方向的基础项目开发，比如购物车、订单详情等核心模块，为后续支付和业财系统的集成奠定基础。
 
-1. 项目过程中，最大的难点在于如何实现多种支付方式、终端、资金池和业务场景之间复杂的联动关系。我负责搭建基于 React + Ant Design 的路由系统，开发复杂联动表单。为了解决这个难题，我深入研究各个组件之间的数据流向和交互逻辑，将整体功能拆解成一个个小模块，逐一攻克。最终成功实现了预期的复杂联动效果，提升了系统的稳定性和用户体验。
-2. 面对复杂技术挑战时，能够提出高效且风险最小的解决方案。eg：在收单路由项目中，面对接口数据结构的大幅变更和收银台逻辑的复杂性。我通过精准改造接口数据层，有效降低了代码迁移成本，同时实现了代码解耦，确保了系统的稳定性和可维护性。
+**第二阶段**：聚焦于支付和业财方向，承担项目开发与部分技术方案设计，核心成果包括
 
-## 收银台接入支付渠道
+1. **支付管理后台重构**：主导系统架构升级，提升稳定性和可维护性。
+2. **金字塔项目**：作为项目 owner，全程负责设计方案、进度管理及风险把控，推动项目快速上线。
 
-随着业务快速发展，收银台需要接入多种支付渠道。项目涉及 H5 收银台、转转小程序等多个终端，同时需要与客户端、小程序及第三方支付渠道进行深度交互。
+此外，我还深度参与了收银台与收款方式优化**、** OA 系统、发票系统及平台运营活动等项目，提供技术支持与方案优化。
 
-1. 独立负责h5收银台、转转小程序接入新的支付渠道，如微企付、京东支付等，确保收银台能吊起支付渠道。
-2. 设计并实现可动态配置的小程序支付方式接入架构，实现"即插即用"的支付方式扩展机制，未来新增支付渠道无需进行代码二次开发，能更好地支持业务需求。通过阿波罗配置实现支付参数的灵活管理和快速迭代，目前已接入微企付、京东支付。
-3. **无项目负责人，产品不了解一些交互和技术，主动承担技术负责人角色**
+这些经历使我在复杂业务场景下的系统设计、团队协作及项目管理能力得到全面锻炼。
 
-- 负责与三方支付渠道公司、转转客户端、转转小程序、采货侠客户端、采货侠小程序、上门小程序等多方的技术对接。系统梳理支付交互流程，确保各端支付功能的一致性和稳定性。将支付交互流程、技术对接细节等系统梳理并沉淀为文档，确保后续维护和扩展的便捷性。
+最后，我擅长的技能有HTML，css，JS，Vue，React等，熟悉ts，antd，期待能将这些经验应用于贵司的项目中。
 
-- 建立跨部门、跨公司的沟通群，主动对接各方开发人员，推动项目高效推进。在项目过程中，帮助客户端和小程序开发人员梳理关键技术问题，提炼最佳解决方案。
+# 项目
 
-- 前端技术负责人
+### 重构原因
 
-  - 前端技术团队的管理和协调工作。
+class写法导致处理逻辑分散，维护成本较大。代码逻辑容与，可读性较低。重复逻辑复用困难。
 
-  - 负责制定前端技术发展路线和规划，指导团队成员完成项目任务，确保项目按时交付并达到预期的质量标准
+使用hooks写法，代码量大大减少，实现了逻辑复用。（减少了40%的重复代码）
 
-  - 与其他部门的负责人和团队密切合作，协调前后端技术的整合和交流，确保项目的整体顺利进行。
+同时也减少了类组件常见错误点（如this绑定问题），缺陷率显著下降。新人上手成本更低了、更优的逻辑单元测试体验（逻辑ui结偶，没有class初始化问题，）。
 
-- 需求质量把控
+便于升级react18，class不完全支持并发渲染等功能，不利于性能优化。未来新功能接入也会有兼容问题。
 
-  - 代码质量：结构清晰、逻辑严谨、可维护性强的代码
+### 选型依据antd+react+ts+umi
 
-  - 兼容性和性能
+大企业背书、灵活性更高
 
-  - 安全性
+**React**可以匹配后台系统模块化的需求，有丰富三方库，hooks简化状态逻辑，虚拟dom能高效处理操作
 
-  - 测试和调试：确保功能正常、界面美观、交互流畅，及时修复bug和问题，保证项目质量。
+**umi**开箱即用，内置路由、构建、部署等，能快速启动项目。支持配置化开发，ts友好。
 
-  - 与设计和后端的协作：密切合作，确保前端页面与设计保持一致，前后端数据交互正常，功能实现符合需
+**ts**可以规范类型安全，智能提示，还可以定义接口（便于前后端协作），检查安全
 
-## sentry
+**Ant Design** 提供很多高级组件，有设计规范，支持主题定制，组件更丰富。
+
+### 金字塔
+
+背景：之前业财的营收数据只能看见一个月之前的数据，金子塔是帮助公司高层能实时看到公司的财报、盈利等。
+
+我在这个项目中是前端负责人的角色，整个项目的前端有3人，其中一个是新同学。
+
+整个项目的我主要负责整体技术方案的设计和落地，技术我这边选择的是antd+react+ts+umi，下面从下面几个部分来介绍方案设计
+
+- 首先是**逻辑和ui解偶**，设计的组件只是起到渲染作用，逻辑可以通过props传，这样的好处是逻辑清晰，复用性较强，更改样式只需改ui层。eg：弹窗）
+
+- 然后是**数据管理**部分，这部分主要分为三个方向进行处理。
+
+  - 状态管理：组件内部状态用state管理。跨组件共享的状态使用context
+
+  - 数据流：父子props，子父回调或ref，超过两层用全局数据管理
+
+  - 数据处理在函数中，避免在组件`<div>`中处理。
+
+- **组件分层**这块，我们拆成了基础组件（基础的职责单一）和业务组件
+- 同时，还**封装统一请求库**，基于公司的请求库并结合业务属性进行封装，主要是做了两件事
+  - 统一处理接口域名：收拢在请求中，域名更换无需更改每个接口，数据请求格式（format等业务自定义数）
+  - 统一错误处理：状态码、提示、错误信息等
+- **最后是编码规范和协作沉淀**
+  - 变量和函数名使用驼峰形式，尽量语义话。
+  - 对复杂的逻辑处理需要添加注释。
+  - 同时，和后端约定返回数据格式
+  - 沉淀文档和最佳实践，eg组件使用指南、接口调用规范
+
+这个项目中间遇到了一些问题，主要是因为团队里新人占比较高，加上前期流程不够规范，导致沟通成本激增，进度一度滞后，上线风险比较大。我这边也是及时进行了跟进。
+
+首先是先分析问题，由于团队内新人较多，对业务也不熟悉。同时需求评审、开发、测试阶段都没有明确的标准，比如需求文档可读性较差，原型交互流程模糊，开发需要反复确认细节。还有开发没有考虑合作，接口定义不规范，联调阶段才暴露问题，导致大量返工。没有固定的同步机制，导致问题暴露不及时，影响上线。
+
+针对这些问题，我做的第一件事就是制定了全流程标准化方案，明确每个阶段责任人和交付的内容。牵头梳理了项目流程七个关键阶段，每个阶段都制定了具体动作和验收标准，并且在团队内一起对齐。
+
+- 需求评审阶段：通过⼀个标准的⽂档和原型图范例进⾏约束。
+
+  落地：我找了公司优质的需求文档和原型图做范例，整理出需求文档和原型的模版。
+
+  - 需求文档需要包含：背景、目标，产品方案等
+  - 原型图需要展示清晰，标注逻辑交互，字段描述，校验规则
+  - 需求评审前一天需要将文档和原型发出，给开发和测试审核。评审直接针对问题进行提问，避免无效会议。
+
+  效果：文档质量高，减少了需求评审时间，更高效。开发过程减少疑问。
+
+- **方案设计与排期阶段：技术方案 + 接口先行**
+
+  落地：开发在需求评审后，输出接口文档和技术方案，组织团队评审，确保方案合理。排期拆解到任务，关键节点明确交付时间。（我做了接口返回数据的规范）
+
+- **开发阶段：每日同步 + 风险可视化**
+
+  通过站会的形式同步进度和风险，项目维护一个进度表格，若遇到阻塞问题会进行记录落实到人和解决时间。每周会整体进度分析，针对问题来落实解决方法，加人还是拆分任务。
+
+  开发阶段末期需要review代码质量和可读性并进行自测。
+
+- **联调和测试阶段**
+
+  测试在联调前两天输出用例，需覆盖全流程。开发记录阻塞问题及责任人。
+
+  测试阶段，进行测试并同步进度和风险，开发需要及时跟进阻塞错误，非阻塞问题排期处理。
+
+- **上线与复盘阶段：计划到人 + 经验沉淀**
+
+  制定上线计划表，明确每个步骤涉及分支、负责人和时间。
+
+  上线后需要验证页面展示、数据准确性等
+
+  上线一周内进行项目复盘，收集问题并落实解决方案。
+
+这套流程推行后，后续项目的延期率大大减少，新人也能更快适应团队节奏。现在整个业财和支付方向都在沿用这套流程，提高了项目上线的质量。
+
+#### **执行**
+
+项目明确项目负责人，全程跟进各个节点的执行情况，及时解决卡点。对于做的好的部分表扬。违反流程会记录。
+
+#### 项目难点
+
+可编辑表格，自定义操作按钮，于是使用了editable. actionRender属性。编辑后获取表格的dataSource不是最新的。![img](https://api2.mubu.com/v3/document_image/28886397_dcbb69fc-2746-4080-fe80-342646672b12.png)
+
+分析：
+
+- Table文件中，列tableColumn相关计算使用了useMemo来缓存计算结果，其中的依赖项中没有actionRender。但是它的的处理也是在这个函数中，如果这个函数没有更新的话， 那actionRender中引用的state一直都会是旧值。
+
+- 但是本身自带的onsave等都能拿到最新的state，对比发现actionRender中无 useRefFunction ，
+  var actionCancelRef = useRefFunction(
+  var actionRender = function actionRender
+
+- 分析useRefFunction作用：通过 ref 将处理函数进⾏了保存，若给 actionRender 传⼊的是 ref.current ，然后在每次组件渲染时更新 ref.current 的指向，使得每次点击时都调⽤最新的 onClick。
+
+**原因：useMemo是可编辑表格内部的东西，useMemo没有监听自定义的更新。**
+
+- 改造：如果传入了自定义的actionRender，使用useRefFunction内部是时间处理可以访问最新的![img](https://api2.mubu.com/v3/document_image/28886397_ce4a9696-6485-41a0-c45d-1d27e21f0a64.png)
+  https://github.com/ant-design/pro-components/pull/8547
+
+#### 前端技术负责人
+
+**全程负责设计方案、进度管理及风险把控，推动项目快速上线。**
+
+- 技术方案
+- 拆分任务，指导团队成员完成项目任务，按时交付，质量保证
+- 关键节点跟进项目进度
+- 和开发测试或其他部门合作，技术整合，合作顺利 无卡点。确保项目的整体顺利进行。
+
+需求质量把控
+
+- 代码质量：结构清晰、逻辑严谨、可维护性强的代码
+- 兼容性和性能
+- 安全性
+- 测试和调试：确保功能正常、界面美观、交互流畅，及时修复bug和问题，保证项目质量。
+- 与设计和后端的协作：密切合作，确保前端页面与设计保持一致，前后端数据交互正常，功能实现符合需
+
+### 收银台接入支付渠道
+
+**背景**：随着业务快速发展，收银台需要接入多种支付渠道。项目涉及 H5 收银台、转转小程序、采货侠小程序、客户端及第三方支付渠道 多个方向进行深度交互。
+
+ **职责**：主要负责的是H5 收银台与转转小程序接入新的支付渠道（wqf和京东）
+
+**问题**：小程序环境下，H5 无法直接调用小程序支付 API，需中转页作为桥梁。传统的编码方式接入的话，每次新接入支付渠道的接入都要写一个中转页面，开发、维护成本较高。
+
+**解决**：所以考虑将中转页面的参数和逻辑分离。将配置参数的映射关系维护到公司的配置平台中，中转页面根据支付方式映射的参数进行跳转支付，支付成功后关闭页面实现流程闭环。实现 “修改配置即新增渠道” 的灵活扩展能力。
+
+**问题**：多团队、多终端及三方合作的复杂支付项目会有一些协作问题。信息同步高度依赖 PM 对接，导致需求信息传递易出现理解偏差、沟通效率低。联调阶段暴露各端接口标准不统一，造成很多返工。支付逻辑复杂且涉及多端交互，问题定位耗时久。测试环境账号问题导致测试周期长。技术细节全靠口头沟通，关键流程、异常处理逻辑等未形成文档沉淀，后期维护难度大。
+
+**解决**：主动建立跨部门、跨公司的沟通群，拉齐信息。联调测试阶段提前要求提供测试账号、环境等配置。联调时间拉齐，遇到问题需要及时跟进。同时，梳理项目交互流程，对接细节，关键技术问题，提炼最佳解决方案文档。
+
+#### 难点
+
+- **小程序**：
+
+  IOS(返回到上一个小程序wx.navigateBackMiniProgram
+
+  Android (打开另一个小程序): wx.navigateToMiniProgram
+
+​	**问题**：安卓跳转回采货侠小程序会清栈，页面栈：【收银台，支付成功页】。点击返回按钮后，页面没有任何反应，无法返回到任何页面。采货侠提供的方案是在支付成功页增加按钮“返回首页”，但每个业务方的支付成功页都需要改造成本较大。
+
+​	解决：因此需要腾讯微企付进行改造，腾讯微企付改造：wx.navigateToMiniProgram，noRelaunchIfPathUnchanged:true。不清栈。
+
+
+
+业务方返回小程序跳转链接(拼好了支付参数的)需要通过小程序原生空白页进行跳转，跳转成功后，空白页回自动关闭
+页面栈:【收银台，/pages/pay/pay，微企付】-->【收银台，微企付】
+采货侠小程序回跳逻辑处理，在onshow通过判断来源场景和appiid来判断从微企付回跳，并关闭采货侠小程序白页，展示收银台
+
+![image-20250602172903596](/Users/burst/Library/Application Support/typora-user-images/image-20250602172903596.png)
+
+### sentry
 
 - **背景**
 
@@ -153,9 +297,49 @@
 
     - 写一个函数包裹异常，发生可以捕获
 
-在工作中，我始终以解决实际问题为导向，注重细节和用户体验。面对复杂问题，我会冷静分析，积极寻找解决方案。我相信自己的项目经验和解决问题的能力，能够为贵公司前端开发工作贡献力量，非常期待能加入贵团队。
+### SelectField
 
-# 移动端优化
+**功能**：输入时展示下拉列表、支持选择输入高亮。
+
+**设计方案**：
+
+- 受控与非受控结合：可以内部输入，可以外部选择
+
+- 在z-field的基础上改造，通过slot插入，聚焦展示，失焦/选择隐藏。
+
+- 输入内容和下拉数据匹配部分，自动高亮，便于识别
+
+- 下拉框最小高度、最大高度根据输入框和视窗动态计算，保证下拉面板不会溢出屏幕。提升了组件的健壮性和用户体验。
+
+  ```javascript
+  pannel = this.$refs.inputRef?.$el.querySelector('.field-select-panel')
+  // 最小高度根据第一个推荐项的高度设置
+  panel.style.minHeight = this.$refs.firstItem?.[0].offsetHeight
+  // 最大高度（视窗高度 - 输入框底部位置 - 底部边距）
+  panel.style.maxHeight = window.innerHeight - (fieldRect.bottom + 10);
+  ```
+
+​	只有在有推荐项且允许显示时才展示面板，否则隐藏，防止空面板出现
+
+- 事件透传：input、focus、blur、clear、select 等事件，方便父组件监听和处理。
+
+### 项目难点
+
+- 全选，反选。
+- 日期组件返回的是毫秒，默认是当前时间，造成日期筛选出错
+- 由于升级umi4，内置不支持dva subscriptions，使用 hooks 解决 解决
+
+​	由于升级umi4，内置react-router6，Umi 4 中将 `react-router@5` 升级到 `react-router@6`，所以路由相关的一些 api 存在着使用上的差异。
+
+- props 默认为空对象，以下属性都不能直接从 props 中取出，history，children，match，location，等
+
+**onRouteChange** 里面做用户访问页面没有权限，就会自动跳转到有权限的一个页面
+
+**patchClientRoutes** 解决升级um i4后，路由配置文件，路由嵌套的时候，*redirect: '/account/search/platform/list',*  使用错误的问题，应该在子路由写 *redirect: '/account/search/platform/list',* 当没有写的情况下，patchClientRoutes里面做的兜底策略。
+
+# 优化 &兼容 
+
+### 移动端优化
 
 **网络优化**
 
@@ -199,7 +383,7 @@
 
 **构建优化**
 
-1. **打包优化**webpack**
+1. **打包优化**webpack
    - Tree Shaking：移除未使用代码，见小宝体积
    - 代码分割(Code Splitting)：使用SplitChunksPlugin实现代码分割按需加载。
    - 压缩代码：TerserPlugin压缩js，css-minimizer-webpack-plugin压缩css
@@ -220,16 +404,43 @@
    - CI/CD中的性能检测
    - A/B测试验证
 
-# 图片的懒加载和预加载
+### 图片的懒加载和预加载
 
 预加载：提前加载图片，当用户需要查看时可直接从本地缓存中渲染。
 
+```html
+<link rel="preload" href="hero-image.jpg" as="image">
+```
+
 懒加载：懒加载的主要目的是作为服务器前端的优化，减少请求数或延迟请求数。
+
+```html
+<img src="thumbnail.jpg" loading="lazy" alt="Description">
+```
 
 两种技术的本质：两者的行为是相反的，一个是提前加载，一个是迟缓甚至不加载。
 懒加载对服务器前端有一定的缓解压力作用，预加载则会增加服务器前端压力。
 
-# 虚拟列表
+**图片优化**
+
+1. **预处理**：压缩 + 转换为高效格式（WebP/AVIF）。
+2. **加载控制**：懒加载 + 响应式设计(根据屏幕尺寸展示分辨率) + 优先级排序。
+3. **基础设施**：CDN + 图片服务器（Node.js + Sharp） + 构建流程自动化（webpack引插件）。
+
+**图片响应式**：视口宽度提供不同尺寸
+
+```html
+<img 
+  srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 2000w" //500w 表示图片宽度为 500px
+  sizes="(max-width: 600px) 100vw, 50vw" //<600px 屏幕占满 100% 宽度，否则占 50%
+  src="medium.jpg" 
+  alt="Responsive landscape"
+>
+```
+
+
+
+### 虚拟列表
 
 **只渲染用户可见区域的元素**，三个关键步骤
 
@@ -272,6 +483,19 @@ offset = startIndex * itemHeight; // 计算偏移量
 - **React**：`react-window` 或 `react-virtuoso`
 - **原生 JS**：`simple-virtual-list`
 
+### 虚拟列表和分页
+
+| **维度**       | **虚拟列表**                                                 | **分页**                                                     |
+| -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **数据获取**   | 一次性请求全部数据（或分段加载部分数据），存储在前端内存中。 | 切换页码请求对应页的数据，前端仅存储当前页数据。             |
+| **数据更新**   | 需重新计算渲染范围，或触发整体数据刷新。                     | 需重新请求对应页，或通过前端局部刷新。                       |
+| **渲染范围**   | 仅渲染可见区域内的列表项                                     | 渲染当前页所有数据对应的 DOM 节点                            |
+| **性能表现**   | 内存占用低，滚动流畅，适合**超大数据量**（如百万级列表）。   | 内存占用随页数增加而上升，页码过多时切换页面可能出现延迟。   |
+| **交互流畅度** | 滚动时无缝加载数据，无页面刷新或跳转，用户感知不到数据分段。 | 切换页码时需等待数据请求和页面刷新，可能出现空白或卡顿。     |
+| **数据定位**   | 不支持直接定位到指定页码，需通过滚动查找数据（可结合搜索功能辅助）。 | 支持直接输入页码或点击页码快速定位数据，适合需要频繁跳转的数据场景。 |
+| **开发成本**   | 需实现滚动监听、可见区域计算、数据缓存等逻辑，复杂度较**高**。 | 只需处理页码切换和数据请求，逻辑简单，框架（如 Vue/React）有成熟插件支持。 |
+| **兼容性**     | 依赖滚动事件和现代浏览器 API，低版本浏览器可能存在兼容问题。 | 兼容性较好，传统网页和现代框架均适用。                       |
+
 # 封装组件
 
 **高内聚低耦合、可复用、可维护**的原则
@@ -283,6 +507,57 @@ offset = startIndex * itemHeight; // 计算偏移量
 
 **如何灵活？**优先满足80%的场景，必要参数通过props。复杂场景通过插槽或者回调实现。复杂组件通过组件组合实现。
 
+# 移动端适配
+
+自适应：根据不同设备屏幕大小来调整尺寸
+
+响应式：会随着实时变动自动调整
+
+项目插件：postcss-pxtorem
+
+**html fontsize = 屏幕宽度/10**
+
+**px ➡️ rem**
+
+宽度为375px的屏幕，100px高度，100px等于多少rem
+
+html fontsize = 375/10 =37.5 ，100/37.5 =2.667 
+
+### 实现响应式方法
+
+- 媒体查询：设置html的fontsize，but区间改变不是实时
+- js：html fontsize = 屏幕宽度/10 , `fontsize = document.documentElement.clientWidth /10`
+- 淘宝库：lib-flexible，动态计算视口设置font-size。
+
+## **响应式设计（适配不同屏幕尺寸）**
+
+- **媒体查询**：可设置html的fontsize，区间改变不是实时
+
+  ```css
+  /* 平板 */ 针对不同屏幕尺寸应用不同的样式
+  @media (max-width: 992px) {
+    .container { width: 750px; }
+  }
+  ```
+
+- **弹性布局（Flexbox & Grid）**
+
+- **百分比**
+
+- **rem/em 相对单位**：em: 子相对于父元素字体大小。rem: 相对于根元素`<html>`
+
+- **viewport 布局**：vw：浏览器可见视口宽度的百分比；vh：浏览器可见视口高度的百分比
+
+  响应式计算：html font-size = 视口宽度 ÷ 设计稿基准宽度 × 基准字体大小
+
+  
+
+  
+
+  
+
+
+
 # 单页面应用/多页面应用
 
 - SPA：使用单个 HTML 完成多个[页面切换](https://so.csdn.net/so/search?q=页面切换&spm=1001.2101.3001.7020)和功能的应用。只有一个 html 文件作为入口，一开始只需加载一次 js,css 等相关资源。使用 js 完成页面的布局和渲染。路由跳转，仅刷新局部资源。
@@ -291,40 +566,69 @@ offset = startIndex * itemHeight; // 计算偏移量
 
 - 区别<img src="https://api2.mubu.com/v3/document_image/28886397_b117b319-0842-4728-e39a-6b993114abd4.png" alt="img" style="zoom: 33%;" />
 
-# 项目难点-技术服务业务例子
+# 安全（Xss）
 
-可编辑表格，自定义操作按钮，于是使用了editable. actionRender属性。编辑后获取表格的dataSource不是最新的。![img](https://api2.mubu.com/v3/document_image/28886397_dcbb69fc-2746-4080-fe80-342646672b12.png)
+1. 自己写数字键盘，原生键盘会被监控。
+2. 实人认证三要素：手机号、身份证、活体检测（闪光颜色）。
+3. 收银台支付做了验签，headers加了数字签名（md5(token-时间戳-解密明文-版本)），加密版本，时间戳
+4. 支付密码通过md5加密传后端。后端是md5+uid 加密后存在数据库中。
 
-分析：
+### 攻击.方法XSS
 
-- Table文件中，列tableColumn相关计算使用了useMemo来缓存计算结果，其中的依赖项中没有actionRender。但是它的的处理也是在这个函数中，如果这个函数没有更新的话， 那actionRender中引用的state一直都会是旧值。
-
-- 但是本身自带的onsave等都能拿到最新的state，对比发现actionRender中无 useRefFunction ，
-  var actionCancelRef = useRefFunction(
-  var actionRender = function actionRender
-
-- 分析useRefFunction作用：通过 ref 将处理函数进⾏了保存，若给 actionRender 传⼊的是 ref.current ，然后在每次组件渲染时更新 ref.current 的指向，使得每次点击时都调⽤最新的 onClick。
-
-- 改造：如果传入了自定义的actionRender，使用useRefFunction内部是时间处理可以访问最新的![img](https://api2.mubu.com/v3/document_image/28886397_ce4a9696-6485-41a0-c45d-1d27e21f0a64.png)
-  https://github.com/ant-design/pro-components/pull/8547
-
-# 攻击.方法XSS
-
-- 跨站点脚本攻击XSS ：将恶意代码注入到应用中，浏览器去默认执行。
+- **跨站点脚本攻击XSS** ：将恶意代码注入到应用中，浏览器去默认执行。
   Vue 和 React 等框架有针对其的策略。
    React DOM 在渲染所有输入内容之前，默认会进行转义。它可以确保在你的应用中，永远不会注入那些并非自己明确编写的内容。所有的内容在渲染之前都被转换成了字符串
+
+  输入过滤与输出转义，内容安全策略（CSP），HttpOnly Cookie
+
+- **跨站点请求伪造 (CSRF)** ：通过伪装的表单、链接或按钮，诱导用户更变敏感数据
+  防范：验证码、使用CSRF Token（防止恶意网站利用用户已登录的身份，）、检查Referer、~~使用从服务器生成的 CSRF 令牌。.NET等来框架的内置 CSRF 来防。~~
+
 - SQL 注入：攻击操纵 数据库查询 以获得未经授权的数据库访问，以执行恶意活动，例如损坏数据库或窃取敏感数据。
   防范：前端输入字段经过正确验证和处理。防止用户在输入的字段中插入恶意代码。
   后端也需要进行验证，同时通过一些工具来检测SQL注入
-- 跨站点请求伪造 (CSRF) ：通过伪装的表单、链接或按钮，诱导用户更变敏感数据
-  防范：验证码、使用CSRF Token、检查Referer、~~使用从服务器生成的 CSRF 令牌。.NET等来框架的内置 CSRF 来防。~~
+
 - 中间人 (MitM)：利用不安全的通信通道（公共wifi等），监视更改用户-服务器的信息传输。
   安全互联网；不连公共wifi；HTTPS 和 TLS 等安全通信协议。
+
 - 点击劫持：假的蒙层，诱骗用户点击与他们认为完全不同的内容
   X-Frame-Options标头，它可以确保你的网站不会嵌入到其他网站或 IFrame 中。
+
 - 安全配置错误
   https://juejin.cn/post/7355798869110194195
+
 - 依赖性利用
+
+# http & TCP 
+
+### http2和http1的区别
+
+http1 是请求和响应都是文本格式传输，且是顺序处理，每个连接只能处理一个请求和响应，虽然可以使用keep-alive来复用连接，但是不能解决队头阻塞的问题。每次请求和响应都是携带完整的HTTP头部，重复传输相同信息，如User-Agent,cookie等，浪费带宽。 
+
+http2 数据是二进制传输，解析效率更高，单个TCP连接可以并发处理多个请求和响应，使用HPACK压缩头部，减少带宽占用。
+
+### HTTP状态码
+
+302:临时重定向，可能改变请求方法
+
+303:临时重定向，强制使用get
+
+307:临时重定向，保持请求方法不变
+
+### HTTPS的加密原理
+
+首先客户端发送请求到服务器，服务器给客户端颁发证书，且把自己的公钥和证书一起发送给客户端。证书是有CA私钥加密，客户端使用CA的公钥验证，验证成功后，客户端自己生成一个随机数预主密钥，然后用服务端的公钥加密后，发送给服务端，然后客户端和服务端根据预主密钥等条件生产会话秘钥。后续会话都使用会话密钥加密传输
+
+### TCP和UDP
+
+| 特性         | TCP                          | UDP                         |
+| ------------ | ---------------------------- | --------------------------- |
+| **连接性**   | 面向连接（三次握手）         | 无连接（直接发送）          |
+| **可靠性**   | 可靠（确认机制、重传、排序） | 不可靠（可能丢包、乱序）    |
+| **传输效率** | 低（头部开销 20 字节）       | 高（头部开销 8 字节）       |
+| **传输方式** | 字节流（无边界）             | 数据报（有边界，不拆分）    |
+| **拥塞控制** | 有（慢启动、拥塞避免）       | 无（可能导致网络拥塞）      |
+| **应用场景** | HTTP、SMTP、FTP、数据库      | DNS、视频流、实时游戏、直播 |
 
 # axios取消
 
@@ -369,96 +673,216 @@ axios.get('/api/data', {
 controller.abort();
 ```
 
+# JSX
+
+实际是react框架的语法糖，是一种ui的写法。
+
+通过Babel等工具编译成标准的JavaScript函数调用（如`React.createElement()`）。这些函数在React运行时被调用，生成**虚拟DOM对象**。React再将这些对象组织成**虚拟DOM树**，通过Diffing算法高效地更新真实DOM。
+
+![image-20250612200141307](/Users/burst/Library/Application Support/typora-user-images/image-20250612200141307.png)
+
+babel编译器转换：@babel/plugin-transform-react-jsx。配合@babel/preset-react预设
+
+```javascript
+// react16编译后
+const element = React.createElement(
+  "div",                       // 元素类型
+  { className: "container" },  // 属性对象
+  "Hello ",                    // 静态文本子节点
+  name,                        // 动态表达式子节点
+  "!"                          // 静态文本子节点
+);
+
+// react17编译后 (自动引入运行时函数)
+import { jsx as _jsx } from 'react/jsx-runtime';
+function App() {
+  return _jsx("h1", {
+    className: "title",
+    children: "Hello World"
+  });
+}
+```
 
 
-# HTTP状态码
 
-302:临时重定向，可能改变请求方法
+# Webpack
 
-303:临时重定向，强制使用get
+js应用程序模块化打包工具
 
-307:临时重定向，保持请求方法不变
+将各类资源（JS、CSS、图片等）转换为优化后的静态资产。其核心功能包括：
 
-# HTTPS的加密原理
+1. **模块打包**：处理 CommonJS、ES Modules 等多种模块格式。
+2. **资源处理**：通过 Loader 转换非 JS 资源（如 `css-loader`、`file-loader`）。
+3. **代码分割**：支持动态导入（`import()`）和 SplitChunksPlugin 实现按需加载。
+4. **优化构建**：通过 Tree-shaking、压缩混淆、懒加载等提升性能。
+5. **开发体验**：提供 HMR（热更新）、DevServer 等加速开发。
 
-首先客户端发送请求到服务器，服务器给客户端颁发证书，且把自己的公钥和证书一起发送给客户端。证书是有CA私钥加密，客户端使用CA的公钥验证，验证成功后，客户端自己生成一个随机数预主密钥，然后用服务端的公钥加密后，发送给服务端，然后客户端和服务端根据预主密钥等条件生产会话秘钥。后续会话都使用会话密钥加密传输
+| 特性         | CommonJS                       | ES Modules (ESM)                       |
+| ------------ | ------------------------------ | -------------------------------------- |
+| **语法**     | `require()` / `module.exports` | `import` / `export`                    |
+| **加载时机** | 同步（运行时加载）             | 异步（编译时静态分析）                 |
+| **模块类型** | 对象（动态导出）               | 静态结构（导出引用）                   |
+| **缓存机制** | 模块级缓存（首次加载后缓存）   | 基于 URL 的缓存（相同 URL 只执行一次） |
+| **应用场景** | 服务器端（Node.js）            | 浏览器、Node.js（`.mjs`）              |
+| **动态特性** | 支持动态加载（如条件加载）     | 静态结构，需使用 `import()`            |
 
-# webpack和vite的区别
+## 构建流程
 
-构建速度： webpack 需要将项目所有的资源，进行静态分析，生成分析依赖图，进行打包。冷启动时间长，热更新的时候需要重新构建依赖图，热更新也慢。 vite 是基于现代浏览器对于原生ES的支持，无需预先打包。冷启动时间短，只更新修改的模块，无需重新构建，且利用浏览对于es的缓存，使得热更新更快。
+Webpack 构建流程从入口文件出发，递归解析模块依赖并生成依赖图，通过 Loader 转换处理各类资源（如 CSS、图片转 JS 模块），利用 Plugin 监听构建钩子扩展功能（如生成 HTML、提取 CSS），期间执行 Tree-shaking、代码分割、压缩混淆等优化，最终将优化后的模块合并为 Chunk，输出到指定目录生成静态资产（如 JS、CSS、HTML），实现从源码到可部署文件的自动化处理。
 
-开发和生产模式： webpack 在开发和生产环境使用相同的打包机制 vite 开发环境使用原生es，按需编译。生产环境使用Rollup进行打包，生成优化的静态文件
+## Loader
 
-生态： webpack 插件丰富，可以处理各种资源类型。社区活跃。 vite 生态相对较新，但是发展迅速，插件是基于Rollup。
+`module.exports = { module: {  rules: [{...}] } }`
 
-# 跨域
+**babel-loader** :用babel来转换ES6文件到ES
 
-- 浏览器不能执行其他网站脚本，是因为“同源策略”
+**css-loader** :允许将css文件通过require的方式引入，分析css模块关系，合成一个css。
 
-- **同源策略**：浏览器对js的限制，协议+域名+端口
+**style-loade**r:将css-loader生成内容，通过`style`挂载在head中。
 
-- 解决方案（避开这种限制）
+**less-loader**: 处理less
 
-  - JSONP
+**sass-loader**:处理sass.
 
-    - script标签中src属性的链接可以访问跨域脚本
+**file-loader**：识别出的资源，移动到指定目录。
 
-    - src链接必须带自定义函数名去接受返回数据
-      http://local host:3000/?callback=getData
+**postcss-loader**:用postcss来处理CSS
 
-    - 缺点
+**autoprefixer-loader**:处理CSS3属性前缀，已被弃用，建议直接使用postcss.file-loader: 分发文件到output目录并返回相对路径
 
-      - 只支持get请求，传输数据有限
+**url-loader**: 和file-loader类似，但是当文件小于设定的limit时可以返回一个Data Url
 
-  - CORS跨域资源共享
+**html-minify-loader**: 压缩HTML
 
-    - 使用XMLHttpRequest发送请求，不符合同源，会在请求头加Orgin（协议域名端口）；服务器判断Origin是否在许可范围，接受请求后加响应头Access-Control-Allow-Origin；浏览器判断是否有Origin，有责处理数据，无责oneError捕获
+```javascript
+//将.txt文本中的 [name] 占位符替换为指定名称。
+// replace-loader.js
+module.exports = function(source) {
+  const options = this.getOptions() || {}; // 获取 Loader 配置参数
+  const name = options.name || 'World';
+  
+  // 替换文本中的 [name] 占位符
+  const result = source.replace(/\[name\]/g, name);
+  
+  // 返回处理后的结果
+  return result;
+};
 
-    - 方法：服务器端设置Access-Control-Allow-Origin响应头
+// 先安装，再使用webpack.config.js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.txt$/,
+        use: [
+          {
+            loader: path.resolve(__dirname, 'replace-loader.js'),
+            options: {
+              name: 'Webpack' // 传递给 Loader 的参数
+            }
+          }
+        ]
+      }
+    ]
+  }
+};
+```
 
-  - proxy代理
 
-  - window.postMessage()
 
-- cdn不受限制？
+## Plugin插件
 
-  - **静态资源（如 CSS、JS、图片）的跨域请求**在现代浏览器中是被**默认允许**的（除非服务器显式禁止）。因为它们不包含敏感数据，cookie等
+`module.exports = {  plugins: [ htmlPlugin，vuePlugin] }`
 
-- cdn和主站共用域名。
+plugin 赋予其各种灵活的功能，例如打包优化、资源管理、环境变量注入等，它们会运行在 webpack 的不同阶段(钩子/生命周期)，贯穿了 webpack 整个编译周期
 
-  - **限制场景**：cdn js访问敏感数据。浏览器对跨域js有更严格控制，防止注入攻击。主站启用 CSP（Content Security Policy），会显式指定允许加载资源的域名，其它不行。
+- 引入包，zzui等
 
+- **VuePlugin** 是 Vue 项目的核心构建工具，负责解析 `.vue` 文件。
+- **HtmlPlugin** 是 Webpack 项目的通用工具，负责自动化 HTML 生成与资源注入。
+
+## webpack和vite的区别
+
+**构建速度**：
+
+​	 webpack 需要将项目所有的资源，进行静态分析，生成分析依赖图，进行打包。冷启动时间长，热更新的时候需要重新构建依赖图，热更新也慢。
+
+​	 vite 是基于现代浏览器对于原生ES的支持，无需预先打包。冷启动时间短，只更新修改的模块，无需重新构建，且利用浏览对于es module的缓存，使得热更新更快。
+
+**开发和生产模式**： 
+
+​	webpack 在开发和生产环境使用相同的打包机制； 
+
+​	vite 开发环境使用原生es module（import，export），浏览器中支持启用 ES Modules按需编译。生产环境使用Rollup进行打包，生成优化的静态文件
+
+**生态**： 
+
+​	webpack 插件丰富，可以处理各种资源类型。社区活跃。 
+
+​	vite 生态相对较新，但是发展迅速，插件是基于Rollup。
+
+| 特性           | Webpack                      | Vite                                        |
+| -------------- | ---------------------------- | ------------------------------------------- |
+| **构建原理**   | 打包所有模块（即使未使用）   | 按需加载（基于浏览器原生 ES Modules）       |
+| **冷启动速度** | 慢（需预处理所有模块）       | 极快（无需打包，直接启动）                  |
+| **热更新**     | 需重新编译模块               | 仅更新修改部分（HMR 更高效）                |
+| **生态成熟度** | 高（支持复杂场景和历史项目） | 中等（对 Vue/React 支持好，其他框架需适配） |
+| **适用场景**   | 大型复杂应用、需精细控制打包 | 中小型项目、开发体验优先                    |
+
+> [!NOTE]
+>
+> **vite**：开箱即用，插件化体系架构，支持多场景(spa,mpa等)。优势：生态强大，开发效率高，功能性强。但是开发生产是esbulid、rollup,比不上go/rust。可能存在bundless，esm的兼容问题
+>
+> **Rollup**：js模块打包工具。适合追求极致体积优化的场景。高效的 Tree-shaking、简洁的配置和专注 ES Modules 的特性。
+>
+> **typescript**：ts打包工具，可以做类型检查，支持多格式输出commonjs等，tsconfig.json可以进行打包配置。优势是前沿、类型安全保证和声明文件.d.ts在其他项目中使用。但是不适合复杂任务(代码分割，css处理，热更新)，只关注编译本身。
+
+## Tree-shaking实现原理?
+
+Tree-shaking是一种消除未使用代码的技术，
+
+它依赖ES6模块的静态结构，分析import和export。构建的过程会分析依赖关系，识别删除未被引用的代码。
+
+生产模式：会启用，使用TerserWebpackplugin 等工具进行代码压缩和优化。
+
+配置：package.json 中将 sideEffects 设置为 false，模块中没有副作用才能安全删除
 
 # Cookie,LocalStorage,sessionStorage
 
-- webstorage = LocalStorage,sessionStorage，只能存储字符串类型的数据
+![image-20250613163230946](/Users/burst/Library/Application Support/typora-user-images/image-20250613163230946.png)
 
-- 存储在客户端
+| **特性**         | **Cookie**                                                   | **LocalStorage**                                             | **SessionStorage**                                           |
+| ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **数据类型**     | 字符串                                                       | 字符串                                                       | 字符串                                                       |
+| **存储位置**     | 客户端（浏览器）                                             | 客户端（浏览器）                                             | 客户端（浏览器）                                             |
+| **存储大小**     | 4KB 左右                                                     | 5MB+                                                         | 5MB+                                                         |
+| **过期时间**     | `Expires`/`Max-Age` 设置                                     | 永久存储（需手动清除）                                       | 浏览器关闭或标签页关闭时清除                                 |
+| **跨标签页共享** | 同一域名下，不同标签页共享（需刷新）                         | 同一域名下，不同标签页共享                                   | 仅当前标签页 / 窗口有效，不共享                              |
+| **数据传输**     | ✅自动发                                                      | ❌仅读                                                        | ❌仅读                                                        |
+| **典型用途**     | 身份验证（Session ID）、用户偏好设置                         | 长期存储用户数据（如主题设置）                               | 临时存储会话数据（如表单临时数据）                           |
+| **存储方法**     | `document.cookie = "key=value; expires=..."`                 | `localStorage.setItem('key', 'value')`                       | `sessionStorage.setItem('key', 'value')`                     |
+| **读取方法**     | `document.cookie.split('; ').find(row => row.startsWith('key='))` | `localStorage.getItem('key')`                                | `sessionStorage.getItem('key')`                              |
+| **删除方法**     | 设置过期时间为过去时间                                       | `localStorage.removeItem('key')`                             | `sessionStorage.removeItem('key')`                           |
+| **清空方法**     | 逐个删除或设置所有 Cookie 过期                               | `localStorage.clear()`                                       | `sessionStorage.clear()`                                     |
+| **遍历方法**     | 手动解析 `document.cookie`                                   | `for (let i=0; i<localStorage.length; i++) { localStorage.key(i); }` | `for (let i=0; i<sessionStorage.length; i++) { sessionStorage.key(i); }` |
 
-- 大小：cookie（4k），sessionStorage & LocalStorage（5M+）
+### **怎么限制cookie访问权限？**
 
-- 过期时间：cookie（设置的），LocalStorage（永久），SessionStorage（浏览器关闭，同一域名下的不同窗口 / 标签页之间数据不共享）
+**`Domain`**：允许访问该 Cookie 的域名，默认当前域名，子可访问。不能跨域
 
-- 数据传输：cookie会传到服务器
+**`Path`**：允许访问该 Cookie 的路径，默认值为当前路径，子可访问。
 
-- 属性
+**`Secure`**：仅限 HTTPS 连接发送 Cookie✅
 
-  - 存数据`localStorage.setItem('username', 'john');`
+**`HttpOnly`**：禁止 JavaScript 访问 Cookie，防xss。✅
 
-  - 取数据`localStorage.getItem('username')`，存在判断!== null
+**`SameSite`**：控制 Cookie 是否在跨站请求中发送。strict（同源）、Lax（get请求可发送，a/link/img）、None（允许发送）
 
-  - 删数据
+限制 Cookie 有效期（`Expires`/`Max-Age`）
 
-    ```
-    localStorage.removeItem('age'); // 删除指定键
-    localStorage.clear(); // 清空所有数据
-    ```
-
-  - 遍历
-
-    ```javascript
-    localStorage.key(i)
-    ```
+```javascript
+Set-Cookie: Domain=example.com; Path=/api; Secure; HttpOnly; SameSite=Strict
+```
 
 
 # 浏览器渲染的线程都有哪些
@@ -517,23 +941,18 @@ controller.abort();
 
 # 重绘，重排
 
-- 重绘：元素外观改变，布局没变
-
-- 重排：DOM变化影响元素几何信息，浏览器需要重新计算几何信息并放在正确位置。重新生成布局
-
+- 重绘：元素外观改变，布局没变。颜色透明度文本样式
+- 重排：DOM变化影响元素几何信息，浏览器需要重新计算几何信息并放在正确位置。重新生成布局。元素内容大小等改变
 - 如何避免：
 
   - 集中改变样式
-
-  - 节点属性值不要放在循环里做变量
-
-  - fixed，position：absoult。
-
+- 减少DOM操作
+  - 使用transform和opacity实现动画
+- 虚拟dom
+  - 使用will-change属性提示浏览器，will-change: transform
+- fixed，position：absoult脱离文档流。
   - 不使用table布局
-
-  - 动画使用GPU，translate使用3d变化
-
-  - 提升为合成层（好处：GPU快，只重绘本身，方法：will-change: transform）
+- 动画使用GPU，translate使用3d变化
 
 # 防抖，节流
 
@@ -581,13 +1000,63 @@ function throttle(fn, interval = 300) {
 滚动加载，加载更多或滚到底部监听
 搜索框，搜索联想功能
 
+# 跨域
+
+- 跨域是指由于浏览器同源策略的限制，阻止不同资源间进行访问。
+
+- **同源策略**：协议+域名+端口。主要是限制了DOM访问，ajax请求，cookie和storage访问
+
+- **突破思路**：
+
+  1. **服务器代理**：同源页面请求同源服务器，服务器再转发至目标服务器。
+  2. **浏览器允许**：通过 CORS 等机制让浏览器允许跨域请求。
+
+- **解决方案**（避开这种限制）
+
+  - **JSONP**：利用 `<script>` 标签的跨域特性（仅支持 GET 请求），通过在 URL 中添加 `callback` 参数指定回调函数获取数据。优点是兼容老浏览器（如 IE），但安全性差（易受 XSS 攻击），且功能受限。
+
+  - **CORS（推荐）**：服务器通过设置响应头（如 `Access-Control-Allow-Origin: *`），允许指定域名或所有域名访问资源。支持 POST、PUT 等全类型请求，需服务器配合配置，现代浏览器兼容性良好（IE10+）。
+
+    **关键响应头**：
+
+    - `Access-Control-Allow-Origin`：允许的域名（如 `https://example.com` 或 `*`）。
+    - `Access-Control-Allow-Methods`：允许的 HTTP 方法（如 `GET, POST, PUT`）。
+    - `Access-Control-Allow-Headers`：允许的请求头（如 `Content-Type, Authorization`）。
+    - `Access-Control-Allow-Credentials`：是否允许携带 Cookie（需与前端 `withCredentials` 配合）
+
+  - **代理服务器**：在开发环境中（如 Webpack、Vite 配置 `proxy`）或生产环境部署独立代理服务，将跨域请求转发至目标服务器，隐藏跨域细节。需额外配置，可能增加服务器负载，但对前端透明。
+
+  - **postMessage**：用于跨窗口通信（如 iframe 与父窗口）`window.postMessage()` 传递数据，需双方监听 `message` 事件，适用于特定场景（如多窗口协作）。
+
+    ```javascript
+    // 发送消息
+    targetWindow.postMessage(message, targetOrigin, [transfer]);
+    
+    // 接收消息（监听 message 事件）
+    window.addEventListener('message', (event) => {
+      if (event.origin !== expectedOrigin) return; // 验证来源安全性
+      
+      const data = event.data; // 接收的数据
+      const source = event.source; // 发送消息的窗口引用
+    });
+    ```
+
+  - **WebSocket**：基于 `ws://` 或 `wss://` 协议，天然不受同源策略限制，支持全双工通信，适合实时交互场景（如聊天、实时数据推送）。
+
+- **cdn不受限制**？
+
+  - **静态资源（如 CSS、JS、图片）的跨域请求**在现代浏览器中是被**默认允许**的（除非服务器显式禁止）。因为它们不包含敏感数据，cookie等
+
+- **cdn和主站共用域名**。
+
+  - **限制场景**：cdn js访问敏感数据。浏览器对跨域js有更严格控制，防止注入攻击。主站启用 CSP（Content Security Policy），会显式指定允许加载资源的域名，其它不行
+
 # 强缓存/协商缓存
 
-- 浏览器缓存：应答模式<img src="https://document-image.mubu.com/document_image/B691F60FA2024B8A1716629817.jpg" alt="img" style="zoom: 25%;" />
 - 在浏览器缓存机制中，强缓存和协商缓存是两个核心概念，它们能有效减少对服务器的请求，从而提升页面加载速度，减轻服务器压力。
 - 强缓存（200（from disk cache 字体和大css/ from memory cache图片和脚本））
 
-  - 从本地缓存中读取资源，根据缓存规则决定决定是否使用缓存结果。请求头Expires（优先级高）和Cache-control<!--max-age=100后过期；no-cache：协商缓存；no-store：不用缓存；public：所有用户都能请求；private：只单个用户浏览器缓存，代理不能访问-->
+  - 从本地缓存中读取资源，根据缓存规则决定决定是否使用缓存结果。判断依据是请求头Expires（优先级高）和Cache-control<!--max-age=100后过期；no-cache：协商缓存；no-store：不用缓存；public：所有用户都能请求；private：只单个用户浏览器缓存，代理不能访问-->
 
   - 分类
 
@@ -601,9 +1070,9 @@ function throttle(fn, interval = 300) {
   - 强缓存失效后，会先向服务器发送一个请求，询问服务器该资源是否有更新。浏览器携带缓存标识向服务器发送请求，服务器根据缓存标识判断是否使用缓存。
 
   - 响应头last-modified 请求的时候带if-modifie-since，最后一次文件修改的时间（s）
-    首次请求，服务器会在响应头添加 Last-Modified。再请求if-modifie-since就是 Last-Modified。最后修改时间<if-modifie-since,304无修改。大于200更新
+    首次请求，服务器会在响应头添加 Last-Modified。再请求if-modifie-since就是 Last-Modified。Last-Modified<if-modifie-since，304无修改。大于200更新
 
-  - 响应头 Etag 请求的时候头部 if-none-match，比较资源内容是否改动（优先级高，资源的唯一标识）
+  - 请求头 Etag 和 if-none-match，比较资源内容是否改动（优先级高，资源的唯一标识）
     首次请求的时候，服务器会返回etag。再请求If-None-Match 就是etag的值。不相等，资源更新；相等取缓存304
 
   - 分类
@@ -612,7 +1081,93 @@ function throttle(fn, interval = 300) {
 
     - 失效，返回200和结果
 
-# Vue底层实现原理
+# Vue
+
+## 组件通信
+
+- **props + $emit**
+
+  父组件绑定自定义事件@/v-on，子组件触发事件`this.$emit('fushijian',  ***)`
+
+- **$refs**
+
+  ```javascript
+  <!-- 父组件 --> 
+  <ChildComponent ref="child" /> 
+  this.$refs.child.someMethod(); // 父组件中访问 
+  ```
+
+  父组件中子组件先绑定ref=aaa，mounted时可以this.$ref.aaa.$on('shijian', 箭头函数)，子组件触发事件this.$emit('fushijian',  数据)
+
+- **Event Bus**
+
+  1、安装全局事件总线`new Vue({... ,beforeCreate(){Vue.prototype.$bus = this},...})`
+  2、接受数据组件，`this.$bus.on('shijian',箭头函数)`
+  3、发送数据组件，`this.$bus.$emit('fushijian', 数据)`
+
+- #### vuex
+
+  - 2只能用3版本，3用4版本
+
+  - why（共享）
+    - 多个组件依赖于同一状态 不同组件的行为需要变更同一状态
+
+  - 状态管理模式，核心是store
+
+  - 存储状态时响应式
+
+    - store中状态变化，相应组件会更新
+
+    - 变更状态唯一方式就是mutation
+
+  - 核心模块
+
+    - state：定义数据
+
+    - Getter：同计算属性，返回值会根据依赖存储
+      store.getters.addcount
+
+    - action：Action 提交的是 mutation，不是直接变更状态。一般会有异步函数
+
+    - mutation：唯一更改store中状态方式，必须是同步函数
+
+    - moudule：允许将单一的store拆分未多个，且保存在统一状态树中
+
+- **非父子组件通信**
+
+  - $attrs/$listeners
+
+  ```html
+  <!-- 父组件 -->
+  <GrandChild :foo="foo" :bar="bar" @customEvent="handleEvent" />
+  <!-- 中间组件 -->
+  <Child v-bind="$attrs" v-on="$listeners" />
+  <!-- 子组件 -->
+  this.$attrs.bar; // 访问父组件传递的bar属性
+  ```
+
+  - provide/inject
+
+    非响应模式provide变了，inject值不会变 
+
+
+  ```javascript
+// A.vue
+export default {  provide: {    name: '浪里行舟'  }}/
+/ B.vue
+export default {  inject: ['name'],  mounted () {    console.log([this.name](http://this.name/));  // 浪里行舟  }}
+  ```
+
+  ​	响应 
+
+  ```javascript
+export default {  provide: {    theme: this  }}或provide() {  
+this.theme = Vue.observable({color: "blue"});  
+return {    theme: this.theme  };}
+inject: {    theme: {      //函数式组件取值不一样      default: () => ({})    }  }
+  ```
+
+## Vue底层实现原理
 
 - vue.js采用数据劫持+发布订阅模式
 
@@ -642,9 +1197,9 @@ function throttle(fn, interval = 300) {
 
   - 每个指令对应的节点绑定更新函数，添加Watcher，数据变化更新视图
 
-# Vue响应式原理
+## Vue响应式原理
 
-- vue2 使用Object.defineProperty 劫持对象属性，当属性发生变化时，触发对应的回调函数。但是不能监听数组的变化，需要使用重写数组的方法来监听数组的变化。还有不能监听对象的添加和删除。嵌套数组和对象需要深度遍历。
+- vue2 使用Object.defineProperty 劫持对象属性，当属性发生变化时，触发对应的回调函数。但是不能监听数组的变化，需要使用重写数组的方法来监听。还有不能监听对象的添加和删除。嵌套数组和对象需要深度遍历。
 
   > [!NOTE]
   >
@@ -658,7 +1213,7 @@ function throttle(fn, interval = 300) {
 - 关闭响应式<img src="https://api2.mubu.com/v3/document_image/28886397_914be960-9ced-4dd8-90e7-f366690cdeb0.png" alt="img" style="zoom: 33%;" />
   markRaw()标记对象为非响应式；toRaw()返回由 reactive 或 ref 创建的响应式对象的原始对象；shallowReactive 仅对对象的顶层属性创建响应式，shallowRef：仅对 .value 的赋值操作创建响应式
 
-# Vue2和3区别
+## Vue2和3区别
 
 **响应式原理**
 
@@ -670,7 +1225,12 @@ function throttle(fn, interval = 300) {
 
 - vue2 生命周期钩子使用选项式API，将数据和函数集中起来处理（data/methods等选项组织代码）
 
-- vue3 新增组合式API（setup + 响应式API生命周期名称前加 on），将同一个功能的代码集中起来处理支持更好的逻辑复用和代码组织
+- vue3 新增组合式API（setup(){响应式API生命周期名称前加 on} ），将同一个功能的代码集中起来处理支持更好的逻辑复用和代码组织
+
+  ```javascript
+  getCurrentInstance(); //vue3 setup(){}中访问当前组件实例
+  ```
+
 
 **性能优化**
 
@@ -681,13 +1241,13 @@ function throttle(fn, interval = 300) {
 - vue3 渲染速度提升（静态节点提升、事件缓存等）
 
 **生命周期**
-	创建前：beforeCreate -> 使用setup()
+	创建前：beforeCreate -> **使用setup()**
 	创建后：created -> **使用setup()新增**
 	挂载前：beforeMount -> onBeforeMount
-	挂载后：mounted -> onMounted
+	挂载后：mounted -> onMounted （可访问dom）
 	更新前：beforeUpdate -> onBeforeUpdate
-	更新后：updated -> onUpdated
-	**销毁前：beforeDestroy -> onBeforeUnmount**
+	更新后：updated -> onUpdated （dom更新完成） //修改响应式数据，会触发新一轮更新导致无限循环，使用 `nextTick` 延迟更新可以解决
+	**销毁前：beforeDestroy -> onBeforeUnmount** （清定时器，事件监听）
 	**销毁后：destroyed -> onUnmounted**
 	异常捕获：errorCaptured -> onErrorCaptured
 	被激活：onActivated 被包含在<keep-alive>中的组件，会多出两个生命周期钩子函数。被激活时执行。
@@ -720,7 +1280,7 @@ function throttle(fn, interval = 300) {
 
 
 
-# vue3好处（******）
+## vue3好处（******）
 
 - 重写了虚拟 Dom 实现，编译模板的优化，更高效的组件初始化
 
@@ -732,35 +1292,64 @@ function throttle(fn, interval = 300) {
 
 - 更好的响应系统：proxy
 
-# Vue生命周期
+
+## 自定义指令
+
+**对 DOM 进行底层操作的功能扩展**，用于封装可复用的 DOM 行为。
+
+| **功能**                 | **Vue 2 钩子**     | **Vue 3 钩子**  |
+| ------------------------ | ------------------ | --------------- |
+| 元素挂载前               | `bind`             | `beforeMount`   |
+| 元素插入 DOM 后          | `inserted`         | `mounted`       |
+| 元素更新前               | `update`           | `beforeUpdate`  |
+| 元素更新后（包括子元素） | `componentUpdated` | `updated`       |
+| 元素卸载前               | -                  | `beforeUnmount` |
+| 元素卸载后               | `unbind`           | `unmounted`     |
+
+```javascript
+// 全局注册 
+  Vue.directive('viewScroll', {
+    inserted: function(el) { //
+      setTimeout(() => el.scrollIntoView(), 0) //元素滚动的可视区
+    }
+  })
+// 使用
+<Mycomponent v-viewScroll/>
+```
+
+```javascript
+// 组件注册
+export default {  directives: {    local: { /* ... */ }  } }
+```
+
+**适用场景？**
+
+> - **指令**：聚焦、权限控制、动画效果等 **纯 DOM 操作**。
+> - **组件**：封装 UI 逻辑、数据状态，适合 **复用 UI 片段**。
+
+​	
+
+## Vue生命周期
 
 - beforeCreate
 
-- created
+- created：data有值，未挂载，vue实例被创建
 
-  - data有值，未挂载
+- beforeMount：可发请求，取数据
 
-  - vue实例被创建
+- mounted：操作dom
 
-- beforeMount
-  - 可发请求，取数据
-
-- mounted
-  - 操作dom
-
-- beforeUpdate
-  - vue实例data变化，触发组建重新渲染
+- beforeUpdate：vue实例data变化，触发组建重新渲染
 
 - updated
 
-- beforeDestory
-  - 可手动销毁
+- beforeDestory：可手动销毁
 
 - destoryed
 
 - 父子组件：父beforeCreated,父created,父beforeMounted,子beforeCreated,子created，子beforeMount，子mounted，父mounted，父beforeUpdated，子beforeDestory，子destoryed，父updated
 
-# vue虚拟DOM
+## vue虚拟DOM
 
 虚拟DOM实际上一个javaScript对象，用来表示真实DOM的数据结构。但是不会直接与浏览器交互，虚拟DOM的作用主要目的是减少直接操作真实DOM的次数，从而提高性能。
 
@@ -770,90 +1359,19 @@ function throttle(fn, interval = 300) {
   - 比较差异：Vue使用一种差异算法，来比较新旧虚拟DOM树之间的差异。
   - 更新真实DOM：找到差异，计算出最小的DOM操作，并将这些操作应用到真实DOM上
 
-# Vue diff
+## Vue diff
 
-当组件创建和更新时，vue均会执行内部的update函数，该函数使用render函数生成的虚拟dom树，将新旧两树进行对比，找到差异点，最终更新到真实dom
+算法的核心目标是 最小化对真实dom的操作。
 
-对比差异的过程叫diff，vue在内部通过一个叫patch的函数完成该过程
+当组件下创建或更新时，会触发vue的update函数。update会先触发render生成一个虚拟dom树，然后将新旧虚拟dom交给patch函数来对比。
 
-在对比时，vue采用深度优先、同层比较的方式进行比对。
+patch核心是是同层、深度优先对比，跨层就是不同节点。两节点相同标准就是key、tag是否一样
 
-在判断两个节点是否相同时，vue是通过虚拟节点的key和tag来进行判断的
+对比过程：
 
-具体来说，首先对根节点进行对比，如果相同则将旧节点关联的真实dom的引用挂到新节点上，然后根据需要更新属性到真实dom，然后再对比其子节点数组;如果不相同，则按照新节点的信息递归创建所有真实dom，同时挂到对应虚拟节点上，然后移除掉旧的dom。
+首先是对比根节点，如果相同就复用旧节点的真实dom，然后对比子节点；如果不相同，销毁旧节点和其真实dom，然后递归创建新节点并挂载。
 
-在对比其子节点数组时，vue对每个子节点数组使用了两个指针，分别指向头尾，然后不断向中间靠拢来进行对比，这样做的目的是尽量复用真实dom，尽量少的销毁和创建真实dom。如果发现相同，则进入和根节点一样的对比流程，如果发现不同，则移动真实dom到合适的位置。这样一直递归的遍历下去，直到整棵树完成对比。
-
-1. diff的时机 (_update)
-
-当组件创建时，以及依赖的属性或数据变化时，会运行一个函数，该函数会做两件事:
-
-- 运行_render生成一棵新的虚拟dom树(vnode tree)
-
-- 运行_update，传入虚拟dom树的根节点，对新旧两棵树进行对比，最终完成对真实dom的更新
-
-```javascript
-// vue构造函数
-function vue(){
-  //...其他代码
-	var updatecomponent =()=>{this._update(this._render())}
-	new Watcher(updateComponent);
-  //其他代码
-}
-```
-
-2. __update 函数在干什么
-   _update函数接收到一个vnode 参数，这就是新生成的虚拟dom树。
-
-   同时，_update函数通过当前组件的_vnode属性，拿到旧的虚拟dom树。
-
-   update函数首先会给组件的vnode 属性重新赋值，让它指向新树
-
-   <img src="/Users/burst/Library/Application Support/typora-user-images/image-20250515142437428.png" alt="image-20250515142437428" style="zoom:33%;" />
-
-   然后会判断旧树是否存在:
-   	不存在:说明这是第一次加载组件，于是通过内部的patch函数，直接遍历新树，为每个节点生成真实DOM，挂载到每个节点的 elm属性上
-
-   <img src="/Users/burst/Library/Application Support/typora-user-images/image-20250515142522839.png" alt="image-20250515142522839" style="zoom:25%;" />
-
-   ​	存在:说明之前已经渲染过该组件，于是通过内部的patch函数，对新旧两棵树进行对比，以达到下面两个目标:
-   ​		完成对所有真实dom的最小化处理
-   ​		让新树的节点对应合适的真实dom
-
-   <img src="/Users/burst/Library/Application Support/typora-user-images/image-20250515142643885.png" alt="image-20250515142643885" style="zoom:25%;" />
-
-3. patch函数的对比流程
-   术语解释:
-   1.「相同」:是指两个虚拟节点的标签类型、key值均相同，但input元素还要看type属性
-
-   2.「新建元素」:是指根据一个虚拟节点提供的信息，创建一个真实dom元素，同时挂载到虚拟节点的elm属性上
-   3.「 销毁元素 」:是指:vnode.elm.remove()
-   4.「更新」:是指对两个虚拟节点进行对比更新，它仅发生在两个虚拟节点「相同」的情况下。具体过程稍后描述。
-   5.「对比子节点」:是指对两个虚拟节点的子节点进行对比，具体过程稍后描述
-
-   详细流程:
-   **1.根节点比较**
-
-   <img src="/Users/burst/Library/Application Support/typora-user-images/image-20250515142905683.png" alt="image-20250515142905683" style="zoom:25%;" />
-
-   patch函数首先对根节点进行比较如果两个节点:
-   「相同」，进入「更新」流程
-   1，将旧节点的真实dom赋值到新节点:newnode.elm= oldvnode.elm
-
-   2.对比新节点和旧节点的属性，有变化的更新到真实dom中
-
-   3.当前两个节点处理完毕，开始「对比子节点」
-
-   不「相同」
-   1.新节点递归「新建元素」
-   2.旧节点「销毁元素」
-
-   **2.对比子节点**
-   在「对比子节点」时，vue-切的出发点，都是为了:
-   尽量啥也别做
-   。不行的话，尽量仅改动元素属性
-   。还不行的话，尽量移动元素，而不是删除和创建元素
-   还不行的话，删除和创建元素
+然后是对比子节点，每个子节点数组用两个指针，分别指向头尾，然后采用双端比较不断向中间靠拢进行对比，尽量复用真实的dom，优先改属性或者移动，尽量减少创建和销毁真实dom。相同就是进入更新流程，新节点指向真实dom，不同就就找在旧虚拟dom是否存在，存在移动真实dom到合适位置，不存在创建节点。一直递归直到结束。
 
 ### **Vue2 双端Diff算法**
 
@@ -865,15 +1383,27 @@ function vue(){
 ### **Vue3 快速Diff算法**
 
 1. 预处理阶段
-   - 前序相同节点直接复用
-   - 后序相同节点直接复用
-2. 核心Diff
+
+   - 前序相同节点直接复用，不相同停止
+   - 后序相同节点直接复用，不相同停止
+
+2. 处理仅有新增节点情况
+
+3. 处理仅有写在节点情况
+
+4. 处理其他情况（新增/卸载/移动）
+
+   核心Diff
+
    - 构建key-index映射表（keyed fragments）
    - 寻找最长递增子序列（LIS）作为稳定锚点
-3. 移动策略
+
+   移动策略
+
    - 仅处理非稳定序列节点
    - 最小化DOM移动操作
-4. **时间复杂度**：O(n) + O(k)（k为最长递增子序列长度）
+
+   **时间复杂度**：O(n) + O(k)（k为最长递增子序列长度）
 
 **关键差异对比**
 
@@ -887,7 +1417,7 @@ function vue(){
 | 内存占用                                                  | 较高（维护4个指针） | 较低（使用位运算标记） |
 | vue2 使用双端比较算法，先比较头尾节点，然后比较剩余节点。 |                     |                        |
 
-# computed & watch
+## computed & watch
 
 - 监听
 
@@ -919,23 +1449,17 @@ function vue(){
 | **异步操作** | ❌                                       | ✅                                                        | ✅                                |
 | **代码形式** | 声明式（返回计算结果）<br />get(),set() | 命令式（监听函数）<br />参数：handler()，deep，immediate | 命令式（函数体）                 |
 
-# data为什么是函数
+## data为什么是函数
 
-- 组件被复用就会创建多个实例，实际都是一个构造函数
+组件在复用的时候会创建多个实例，实际都是一个构造函数。
 
-- 若data是对象，作为引用类型，一个改变会影响其它
-
-- 为了保证组件实例的data之间不冲突，data得是函数
+如果data是对象，它就是一个引用类型，改了一个会影响其它
 
 # key作用
 
-- 当列表中的元素被添加、删除、重新排序时，框架需要判断哪些元素发生了变化。 key框架可以快速定位到对应的元素，避免全量比较。
-
-- 当元素被移动或重新排序时，`key` 可以帮助框架保留元素的状态（输入值、动画进度）
-
-- 如果没有 `key`，框架默认按元素位置（索引）比较，可能导致错误复用。（eg在列表头部插入元素时，索引变化会导致所有后续元素重新渲染）
-
-- `key` 的核心作用是**唯一标识同级元素**，帮助算法快速识别元素的变化类型（新增、删除、移动、更新），从而避免不必要的 DOM 操作，提升渲染效率。
+- key核心唯一标识同级元素，元素增删改时，key可以帮助快速定位哪些元素变化，避免全量查找。减少dom操作，提升diff效率
+- 元素移动时，可以帮助保留状态值（输入框、动画进度等）
+- 没key，默认会用index，可能导致错误复用（eg在列表头部插入元素时，索引变化会导致所有后续元素重新渲染）
 
 
 **不能是index？**
@@ -950,114 +1474,24 @@ function vue(){
 | **索引作为 `key`**  | 不推荐，可能导致状态异常  | 允许但不推荐，性能较差     |
 | **其他场景**        | 仅用于列表                | 还用于条件渲染、动态组件等 |
 
-# 组件通信
-
-- 父子
-
-  - props，emit
-    1、父组件绑定自定义事件@/v-on，子组件触发事件this.$emit('fushijian',  ***)
-    2、父组件中子组件先绑定ref=aaa，mounted时可以this.$ref.aaa.$on('shijian', 箭头函数)，子组件触发事件this.$emit('fushijian',  数据)
-
-- 全局组件通信（父子、兄弟、跨级）Event Bus
-  1、安装全局事件总线new Vue({... ,beforeCreate(){Vue.prototype.$bus = this},...})
-  2、接受数据组件，this.$bus.on('shijian',箭头函数)
-  3、发送数据组件，this.$bus.$emit('fushijian', 数据)
-
-- vuex
-
-  - 多级组件嵌套传递、变更数据
-
-- $attrs/$listeners
-
-  - 多级组件嵌套传递数据
-    - 两个对象 父：<child-com1 :foo="foo" :boo="boo" :coo="coo" :doo="doo" title="前端工匠"></child-com1> 子 ：$attrs 里存放的是父组件中绑定的非 Props 属性 props: {    foo: String // foo作为props属性绑定  },  created() {    console.log(this.$attrs); // { "boo": "Html", "coo": "CSS", "doo": "Vue", "title": "前端工匠" }  }
-
-- provide/inject
-
-  - 非响应模式provide变了，inject值不会变 
-
-    ```
-    // A.vue
-    export default {  provide: {    name: '浪里行舟'  }}/
-    / B.vue
-    export default {  inject: ['name'],  mounted () {    console.log([this.name](http://this.name/));  // 浪里行舟  }}
-    ```
-
-  - 响应 
-
-    ```
-    export default {  provide: {    theme: this  }}或provide() {  
-    this.theme = Vue.observable({color: "blue"});  
-    return {    theme: this.theme  };}
-    inject: {    theme: {      //函数式组件取值不一样      default: () => ({})    }  }
-    ```
-
-    
-
-# vuex
-
-- 2只能用3版本，3用4版本
-
-- why（共享）
-  - 多个组件依赖于同一状态 不同组件的行为需要变更同一状态
-
-- 状态管理模式，核心是store
-
-- 存储状态时响应式
-
-  - store中状态变化，相应组件会更新
-
-  - 变更状态唯一方式就是mutation
-
-- 核心模块
-
-  - state：定义数据
-
-  - Getter：同计算属性，返回值会根据依赖存储
-    store.getters.addcount
-
-  - action：Action 提交的是 mutation，不是直接变更状态。一般会有异步函数
-
-  - mutation：唯一更改store中状态方式，必须是同步函数
-
-  - moudule：允许将单一的store拆分未多个，且保存在统一状态树中
-
 # vue-router
 
-用于实现单页面应用（SPA）的路由功能
+**单页面应用（SPA）路由管理器**，主要是实现页面级组件的动态加载（路由组件渲染`<router-view>`），url和视图同步，导航控制（前进后退跳转）。
 
-**路由模式**
+分为两种路由模式:
 
-- **hash 模式**（默认）：URL 带 `#` 符号（如 `http://example.com/#/home`），兼容性好。
+**hash**：url中带#，核心是hash改变时，通过**监听`haschange`事件**来触发事件更新视图，无需浏览器重新加载。通过`window.location.hash`来修改
 
-  -  **核心机制**
-     - **监听 `hashchange` 事件**：当 URL 的 hash 值（`#` 后的部分）变化时，触发事件并更新视图，不触发浏览器重新加载。
-     - **修改 hash**：通过 `window.location.hash = '/new-path'` 改变 URL，浏览器会记录历史，但不向服务器发送请求。
+**history**：使用html5 history api，核心是**监听`popstate`事件**来判断用户前进后退来更新视图。通过pushState和replaceState操作，不处罚页面刷新
 
-- **history 模式**：使用 HTML5 History API，URL 更美观（如 `http://example.com/home`），需服务器配置支持。
-
-  - 核心机制
-
-    - HTML5 History API：通过pushState和replaceState
-
-      方法操作浏览器历史记录，改变 URL 但不触发页面刷新。
-
-      - `history.pushState(state, title, path)`：添加新的历史记录。
-      - `history.replaceState(state, title, path)`：替换当前历史记录。
-
-    - **监听 `popstate` 事件**：当用户点击浏览器后退 / 前进按钮时触发，更新视图。
+`history.pushState(state, title, path)`
 
 **导航模式**
 
 - **声明式导航**：使用 `<router-link to="/home">Home</router-link>`组件。
 - **编程式导航**：使用 `router.push('/home')`or`router.push({ name: 'User', params: { id: 123 } });`，`router.replace`
 
-**动态路由参数**
-
-```
-{ path: '/user/:id', component: User } // 路由配置
-this.$route.params.id; // 访问动态参数
-```
+**路由映射方式**有三种：声明式routes、嵌套路由、动态路由:id `this.$route.params.id; `
 
 **导航守卫**：登录验证，权限控制
 
@@ -1070,6 +1504,10 @@ router.beforeEach((to, from, next) => {
   }
 });
 ```
+
+- 全局守卫：`beforeEach/beforeResolve/afterEach`
+- 路由独享守卫：`beforeEnter`
+- 组件内守卫：`beforeRouteEnter/beforeRouteUpdate/beforeRouteLeave`
 
 **其他**
 
@@ -1087,7 +1525,7 @@ router.beforeEach((to, from, next) => {
 
 - why？
 
-  - DOM更新是异步执行的，修改响应式数据时，会将任务放在更新队列中，抽空执行。因此你在修改后立即访问DOM会得到更新前数据。
+  - DOM更新是异步执行的，修改响应式数据时，会将任务放在更新队列中，抽空执行。因此你在修改后立即访问DOM会得到老数据。
 
 - Vue的nextTick实现主要基于JavaScript事件循环机制，精准控制执行顺序，事件循环是唯一能实现 “异步等待” 的底层机制，通过将回调注册到任务队列中，让引擎在合适的时机自动执行。
 
@@ -1177,18 +1615,18 @@ router.beforeEach((to, from, next) => {
 
 **动态插槽**
 
-父
+父 
 
 ```html
 <template #[name]> <h1>自定义标题</h1></template>
 const name = ref('header')
 ```
 
-**作用域插槽**：子组件向父组件暴露内部数据，父组件自定义渲染逻辑
+**作用域插槽**：vue实现 `子->父`通信的插槽，通过在子组件上绑定数据`<slot :item="item">` ，父组件通过 `v-slot="slotProps"`或`v-slot="{ item }"`接收数据并自定义渲染逻辑。其设计体现开闭原则——子组件提供数据不变，父组件决定显示方式灵活多变。
 
-​	子组件通过 `<slot :item="item">` 暴露数据，父组件通过 `v-slot="slotProps"` (slotProps.item.name)或解构直接取 `v-slot="{ item }"` 接收
+用处：收银台每项按钮。
 
-​	子组件决定**渲染位置**，父组件决定**渲染内容**。
+子组件决定**渲染位置**，父组件决定**渲染内容**。
 
 子
 
@@ -1212,40 +1650,17 @@ const name = ref('header')
 
 ### **1. 为什么需要 Fiber？**
 
-- **旧版问题**：React 15的渲染是**同步递归**的， 协调器（Reconciler）通过递归方式同步构建和对比虚拟 DOM 树，若遇到复杂组件或大规模 DOM 更新时会**长时间阻塞主线程**，导致用户操作（如点击、滚动）无响应，页面卡顿。
+在 React 15 及以前，协调器采用同步递归算法处理虚拟 DOM，这会导致长时间占用主线程，使浏览器无法及时响应用户交互（如滚动、点击），造成页面卡顿。Fiber 通过三大核心机制优化了这一过程：
 
 ### **2. Fiber 架构通过三大核心改进优化了这一过程：**
 
-**① 任务切片：把大任务拆成小任务**
+**任务切片** ➡️ **调度器：智能分配时间和优先级 ➡️ 增量渲染与双缓存：高效更新 DOM**
 
-- 做法：
-  - 将虚拟 DOM 树拆解为 **Fiber 节点链表**（每个节点是一个小任务）。
-  - 渲染时不再一次性递归完整个树，而是**每次只处理一个 Fiber 节点**，处理完就暂停。
-- 好处：
-  - 主线程不会被长时间占用，可及时响应其他操作（如用户点击）。
+首先，Fiber 将虚拟 DOM 树拆解为 **Fiber 节点链表**，每个节点代表一个可独立执行的小任务。渲染时不再一次性递归完整个树，而是每次只处理一个节点，处理完就暂停，让出主线程，确保浏览器能及时响应用户操作。
 
-**② 调度器：智能分配时间和优先级**
+其次，Fiber 引入了 **优先级调度系统**。它将主线程时间划分为多个 “时间片”，每个任务在一帧内有最大执行时间，超时则暂停。同时，为不同任务分配优先级（如用户交互 > 数据加载 > 低优先级更新），高优先级任务可中断低优先级任务，优先处理。这种协作式调度让渲染过程更灵活高效。
 
-- 时间分片：
-  - 把主线程时间划分为多个 **“时间片”**（但个任务在一帧内最大执行时间）。
-  - 每个时间片内执行一部分任务，超时就暂停，让浏览器有时间渲染页面。
-  - 类比：就像挤地铁，每次车门开的瞬间（浏览器空闲）挤进去一点人（执行一点任务），车门要关了就停下（暂停）。
-- 优先级管理：
-  - 为不同任务分配优先级（如用户交互 > 数据加载 > 低优先级更新）。
-  - 高优先级任务（如点击事件）可中断低优先级任务，优先处理。
-- 协作式调度：
-  - 任务执行过程中可暂停、恢复、调整顺序，类似多人协作分工。
-
-**③ 增量渲染与双缓存：高效更新 DOM**
-
-- **增量渲染**：
-  - 协调器（Reconciler）分阶段构建 Fiber 树，标记需要更新的节点（如新增、删除）。
-  - 然后，渲染器（Renderer）最后**批量更新真实 DOM**，减少重排和重绘次数。
-- **双缓存机制**：
-  - 内存中同时维护两棵 Fiber 树：
-    - **current Fiber**：当前显示在页面上的。
-    - **workInProgress Fiber**：正在计算的新树。
-  - 计算完成后，直接切换两棵树，实现无缝更新。如果出错，可回滚到旧树。
+最后，Fiber 采用 **增量渲染与双缓存机制**。协调阶段分阶段构建 Fiber 树，标记需要更新的节点；提交阶段批量更新真实 DOM，减少重排和重绘次数。双缓存则通过在内存中同时维护两棵 Fiber 树（当前显示的树和正在计算的新树），计算完成后直接切换引用，实现无缝更新，且出错时可回滚到旧树。
 
 ### 3. 下一个要执行的 Fiber 任务呢
 
@@ -1277,7 +1692,7 @@ const name = ref('header')
 
 # react diff
 
-React的Diff算法是一种用来高效更新页面的机制。简单来说，当你修改React组件的数据时，它不会直接去操作真实的DOM（因为DOM操作很慢），而是先在内存里对比新旧“虚拟DOM”的差异，只更新需要变化的部分。
+当你修改React组件的数据时，它不会直接去操作真实的DOM（因为DOM操作开销较大），而是先在内存里对比新旧“虚拟DOM”的差异，只更新需要变化的部分。
 
  这个对比过程有三个关键策略： 
 
@@ -1295,9 +1710,19 @@ React的Diff算法是一种用来高效更新页面的机制。简单来说，�
 
 # class组件和函数组件
 
-- class：基于es6的class定义组件，接收props，返回react元素。它是数据和逻辑的封装。 也就是说，组件的状态和操作⽅法是封装在⼀起的。
+优先使用hooks组件，这是react推荐的主流方案。逻辑简洁，复用性强，更直观的数据管理。
 
-- 函数：主要就是返回一个值。数据和操作是隔离的。函数就是返回组件的 HTML 代码，返回结果只依赖于它的参数。不改变函数体外部数据、函数执⾏过程⾥⾯没有副作⽤。
+但在以下情况我会考虑类组件：
+
+1. 维护已有类组件组成的项目，避免全盘重写
+2. 需要创建Error Boundaries这类必须使用类组件的特殊情况
+3. 当团队对类组件更熟悉且项目时间压力大时作为过渡方案
+
+![image-20250612191218424](/Users/burst/Library/Application Support/typora-user-images/image-20250612191218424.png)
+
+- **class**：基于es6的class定义组件，接收props，返回react元素。它是数据和逻辑的封装。 也就是说，组件的状态和操作⽅法是封装在⼀起的。
+
+- **函数**：主要就是返回一个值。数据和操作是隔离的。函数就是返回组件的 HTML 代码，返回结果只依赖于它的参数。不改变函数体外部数据、函数执⾏过程⾥⾯没有副作⽤。
 
 - class缺点
 
@@ -1323,14 +1748,6 @@ React的Diff算法是一种用来高效更新页面的机制。简单来说，�
     - class：new一个新的实例（this是可变的），然后render返回react元素。
 
     - 操作中改变状态值，函数会按照顺序返回状态。class会直接获取到最新的状态
-
-  |              | 函数                | class |
-  | ------------ | ------------------- | ----- |
-  | 编写方式     |                     |       |
-  | 状态管理     | hooks出现前，无状态 |       |
-  | 生命周期     | 无                  |       |
-  | 调用方式     |                     |       |
-  | 获取渲染的值 |                     |       |
 
   
 
@@ -1390,7 +1807,7 @@ function MyComponent(props) {
 
     - setState 可有多个，更加语义化，更加方便使用。
 
-- useReducer() 复杂状态管理  ，状态转换机器
+- **useReducer**() 复杂状态管理  ，状态转换机器
 
   - action：发生什么；dispatch：发送给reducer；reducer：处理state；返回一个新的state
 
@@ -1513,7 +1930,7 @@ function MyComponent(props) {
 - **多次渲染的一致性**：必须保证每次渲染时 Hooks 的调用顺序完全相同。（React 在 **开发模式** 中会维护一个 `renderPhaseHooks` 数组，用于验证 Hooks 调用顺序，`renderPhaseHooks` 的长度会与预期不符，React 会抛出警告："Invalid hook call. Hooks must be called in the exact same order in every render."）
 - **性能优化**：避免动态创建和销毁 Hooks 对象，提高渲染效率。
 
-# react组件通信
+# react 组件通信
 
 - ⽗组件向⼦组件通信：props传递数据or函数
 
@@ -1614,8 +2031,6 @@ function MyComponent(props) {
   }
   ```
 
-  
-
 - refs（DOM 引用与组件通信，父子）
 
 - 路由参数
@@ -1646,7 +2061,38 @@ function MyComponent(props) {
 
 # redux
 
-- Redux就是一个js容器，用于全局的状态管理
+Redux 的核心是单向数据流架构：通过 Action 描述变化，Reducer 纯函数（不能异步）处理状态，接收state、action，生成新的state然后返回给store，Store 集中管理状态。
+
+action是个处理对象，可以需要中间件来扩展异步处理等操作。
+
+中间件 在action和reducer之间，`import { dynamicMiddleware } from 'redux-dynamic-middlewares';`
+
+
+
+- store：
+
+  ```javascript
+  const store = createStore(reducer)  // createStore方法是redux提供的
+  store.getState()：//获取reducer中返回的state数据；
+  store.subscribe()：//用来注册监听state是否改变；
+  store.dispatch()：//用于发送action，来修改reducer中的state数据；
+  ```
+
+- reducer：是一个函数，接收state、action，生成新的state
+
+  ```javascript
+  const initState={...}
+  export default (state=initState,action)=>{
+  	const newState = JSON.parse(JSON.stringfy(state)) ; // 由于reducer不能直接修改state，所以做下深拷贝
+  	if(action.type === XXX){
+  		.....    // 这块就是针对不同的action type，对数据进行不同的处理，处理完后，将最新处理完后的nesState返回给store
+  	}
+  	return newState；
+  }
+  
+  ```
+
+- action：js对象，有type表示执行的动作
 
 <img src="https://i-blog.csdnimg.cn/direct/69ee4d6ca43942ccb990c9e5dc6adedf.png" alt="img" style="zoom:25%;" />
 
@@ -1660,32 +2106,7 @@ function MyComponent(props) {
   - state是只读的。改state通过action，store.dispatch(action)
   - 使用reducer来进行修改。
 
-- 组成
-
-  - store：
-
-    ```javascript
-    const store = createStore(reducer)  // createStore方法是redux提供的
-    store.getState()：//获取reducer中返回的state数据；
-    store.subscribe()：//用来注册监听state是否改变；
-    store.dispatch()：//用于发送action，来修改reducer中的state数据；
-    ```
-
-  - reducer：是一个函数，接收state、action，生成新的state
-
-    ```javascript
-    const initState={...}
-    export default (state=initState,action)=>{
-    	const newState = JSON.parse(JSON.stringfy(state)) ; // 由于reducer不能直接修改state，所以做下深拷贝
-    	if(action.type === XXX){
-    		.....    // 这块就是针对不同的action type，对数据进行不同的处理，处理完后，将最新处理完后的nesState返回给store
-    	}
-    	return newState；
-    }
-    
-    ```
-
-  - action：js对象，有type表示执行的动作
+  
 
 - 使用场景
 
@@ -1699,14 +2120,27 @@ function MyComponent(props) {
 
 # 生命周期()
 
-# React15
+# React版本
+
+1. **React 15 及之前**：基于 Stack Reconciler 的同步渲染架构，存在性能瓶颈
+2. **React 16 时期**：Fiber 架构重构奠定异步渲染基础，16.8 引入 Hooks 革命性改变开发范式
+3. **React 18 时代**：
+   1. 引入并发渲染能力（不阻塞主线程的情况处理多个状态更新）
+   2. 通过自动批处理（合并所有场景的状态更新，减少无效渲染）、Transition API （智能区分紧急/非紧急更新，保证关键交互响应）等实现智能更新调度
+
+关键升级包括：
+
+- 渲染机制：同步→可中断异步→并发渲染
+- 组件开发：Class 组件→函数组件+Hooks
+- 服务端渲染：传统SSR→流式SSR+选择性水合"
+
+### React15
 
 - 使用循环递归虚拟DOM，使用js执行栈，需执行到任务完成为止。若虚拟dom树较深，会长时间占用主线程，此时无法进行其他操作，使页面卡顿。
 
-# React16
+### React16
 
 - 使用循环来模拟递归，diff过程是占用浏览器的空闲时间，解决页面卡顿。
-
 - 三层模型
 
   - Scheduler (调度层)：调度任务的优先级，高优任务优先进入协调器
@@ -1715,7 +2149,8 @@ function MyComponent(props) {
 
   - Renderer (渲染层)：负责将发生变化的部分渲染到页面上。（16可中断，15不可）
 
-# React19
+
+### React19
 
 - 创建了“React 编译器”。现在将管理这些重新渲染。React 将自动决定何时以及如何更改状态并更新 UI
 
@@ -1854,41 +2289,251 @@ Function.prototype.myApply = function(context, argsArray) {
 
 # new
 
-1. 新建了一个空对象
-2. 对象的（`__proto__`）属性指向构造函数的prototype 
-3. 绑定this
-4. 执行构造函数后返回这个对象
+```HTML
+const newInstance = (fn, ...args) => {
+  const obj = Object.create(fn.prototype) // 创建一个新对象，继承构造函数的原型
+  const res = fn.apply(obj, args) // 将构造函数的this指向新创建的对象，并传入参数
+  return res instanceof Object ? res : obj // 如果构造函数返回的是一个对象，则返回该对象，否则返回新创建的对象
+}
+```
 
 # 原型
 
-是JavaScript语言中固有的特性
+**原理**：函数和对象的内置机制，用于共享属性和方法。
 
-**原理**：对象引用了另一个对象来获取该对象的属性和方法。
+- **`prototype`**原型：函数特有的属性，指向原型对象，用于定义共享方法。
 
-prototype（原型）：通过调用构造函数而创建的所有对象实例的原型对象
+- **`__proto__`**：对象（包括函数和原型对象）的隐式属性，指向父级原型对象，用于实现原型链查找
 
-每个函数都有 一个prototype 属性指向一个原型对象，原型对象包含特定类型的所有实例共享的属性和方法。
+- ```javascript
+  //是否是该对象的原生属性：
+  teacher.hasOwnProperty('name')
+  //判断属性是否在原型链上
+  obj.hasOwnProperty(key) === false && key in obj
+  ```
 
-每个对象（除null）都有 `__proto__` 属性，这个属性指向了创建该对象的构造函数的原型。而原型对象也通过`__proto__`指向它自己的原型对象，层层向上直到Object.prototype，这样就形成了原型链。
+**原型链**：是对象查找属性的路径，通过 `__proto__` 层层向上关联，形成链式结构
 
-是否是该对象的原生属性：teacher.hasOwnProperty('name')
+- 每个对象（除null）都有 `__proto__` 属性，这个属性指向了创建该对象的构造函数的原型。没找到就沿着proto向上查找，层层向上直到Object.prototype，这样就形成了原型链。
 
-**特点**：
-当访问对象属性时，如果对象内部没有这个属性，就会沿着原型链一直往上找；
-当修改原型时，与之相关的对象也会继承这一改变。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2020073011130453.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2J1cnN0Z2lybHM=,size_16,color_FFFFFF,t_70)
+  `隐式student.__proto__ === 显式Student.prototype` 
 
-Person.prototype.name 这种的写法是在原有的基础上把值改了。 改的是属性，也就是房间里面的东西。
-而 Person.prototype={name:’ cherry’ }是把原型改了，换了新的对象。 改了个房间。_proto_指向的空间不变。
+- **特点**：
+  当访问对象属性时，如果对象内部没有这个属性，就会沿着原型链一直往上找；
+  当修改原型时，与之相关的对象也会继承这一改变。
 
-**构造函数、原型、实例之间的关系**
+  Person.prototype.name 这种的写法是在原有的基础上把值改了。 改的是属性，也就是房间里面的东西。
+  而 Person.prototype={name:’ cherry’ }是把原型改了，换了新的对象。 改了个房间。_proto_指向的空间不变
 
-每个实例对象（ object ）都有一个私有属性（称之为 `__proto__ `）指向它的构造函数的原型对象（**prototype** ）。该原型对象也有一个自己的原型对象( `__proto__ `) ，层层向上直到一个对象的原型对象为 `null`。根据定义，`null` 没有原型，并作为这个**原型链**中的最后一个环节。
+  
 
-每个构造函数都有一个原型对象(prototype)，原型对象都包含一个指向构造函数的指针（constructor），而实例都包含一个指向原型对象的内部指针（`__proto__`）。
+  ![](https://img-blog.csdnimg.cn/2020073011130453.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2J1cnN0Z2lybHM=,size_16,color_FFFFFF,t_70)
+
+
+
+**为什么共享属性？**
+
+- 内存优化：多个对象需要相同方法，在原型上定义就能做到共享。
+- 维护：修改原型链上属性会影响所有实例，便于批量更新
+- 继承的核心，实现复用扩展
+
+
+
+~~**构造函数、原型、实例之间的关系**~~
+
+~~每个实例对象（ object ）都有一个私有属性（称之为 `__proto__ `）指向它的构造函数的原型对象（**prototype** ）。该原型对象也有一个自己的原型对象( `__proto__ `) ，层层向上直到一个对象的原型对象为 `null`。根据定义，`null` 没有原型，并作为这个**原型链**中的最后一个环节。~~
+
+~~每个构造函数都有一个原型对象(prototype)，原型对象都包含一个指向构造函数的指针（constructor），而实例都包含一个指向原型对象的内部指针（`__proto__`）。~~
 
 Object.create(原型);
 Object.prototype 是原型链的终端
+
+# 继承
+
+**JavaScript 继承是指一个对象直接使用另一对象的属性和方法**
+
+1. **原型链**：每个对象都有一个内部属性 `[[Prototype]]`（可通过 `__proto__` 访问），指向其原型对象。当访问对象的属性时，JavaScript 会先查找对象本身，再沿原型链向上查找，直到 `Object.prototype` 或 `null`。
+2. **构造函数**：通过 `new` 关键字调用的函数，用于创建对象实例，实例会继承构造函数原型（`prototype`）上的属性和方法。
+
+| 继承方式       | 优点               | 缺点                   | 适用场景           |
+| -------------- | ------------------ | ---------------------- | ------------------ |
+| 原型链继承     | 实现简单           | 共享引用类型、无法传参 | 仅继承方法         |
+| 构造函数继承   | 独立属性、可传参   | 无法继承原型链         | 仅继承属性         |
+| 组合继承       | 同时继承属性和方法 | 调用两次父类构造函数   | 兼容性要求高的场景 |
+| 寄生组合继承   | 最优方案           | 实现复杂度较高         | 性能敏感的场景     |
+| ES6 Class 继承 | 语法简洁、语义清晰 | 依赖 ES6 环境          | 现代项目           |
+
+**原型链继承**
+
+```javascript
+function Parent() {
+  this.name = 'parent';
+  this.colors = ['red', 'blue'];
+}
+
+Parent.prototype.say = function() {
+  console.log('hello');
+}
+
+function Child() {}
+Child.prototype = new Parent(); // 关键：子类的原型是父类的实例，child.__proto__ === Parent.prototype;
+
+const child1 = new Child();
+child1.colors.push('green'); // child1.colors：['red', 'blue', 'green']
+const child2 = new Child(); // child2.colors：['red', 'blue', 'green'] ❗共享引用类型
+```
+
+**构造函数继承**
+
+```javascript
+function Parent(name) {
+  this.name = name;
+  this.colors = ['red', 'blue'];
+}
+
+Parent.prototype.sayHi = function() {
+  console.log('Hi from Parent');
+};
+
+function Child(name, age) {
+  Parent.call(this, name); // 关键: 在子类构造函数中调用父类构造函数，通过 call/apply 绑定父类上下文
+  this.age = age;
+}
+
+const child1 = new Child('Alice', 20);
+child1.colors.push('green'); //child1.colors): ['red', 'blue', 'green']
+const child2 = new Child('Bob', 25); // child2.colors:['red', 'blue'] ✅独立引用类型
+```
+
+**组合继承**
+
+```javascript
+function Parent(name) {
+  this.name = name;
+  this.colors = ['red', 'blue'];
+}
+
+Parent.prototype.say = function() {
+  console.log('hello');
+}
+
+function Child(name, age) {
+  Parent.call(this, name); // 第一次调用父类构造函数
+  this.age = age;
+}
+
+Child.prototype = new Parent(); // 第二次调用父类构造函数
+Child.prototype.constructor = Child;
+```
+
+**寄生组合继承**
+
+```javascript
+function Parent(name) {
+  this.name = name;
+  this.colors = ['red', 'blue'];
+}
+
+Parent.prototype.say = function() {
+  console.log('hello');
+}
+
+function Child(name, age) {
+  Parent.call(this, name); // 继承属性，第一次调用父类构造函数
+  this.age = age;
+}
+
+// 继承原型
+Child.prototype = Object.create(Parent.prototype); // 关键：直接继承父类原型
+Child.prototype.constructor = Child; // 修正 constructor
+
+// 子类可以添加自己的方法
+Child.prototype.play = function() {
+  console.log('playing');
+};
+```
+
+**ES6 Class 类继承（语法糖）**
+
+```
+class Parent {
+  constructor(name) {
+    this.name = name;
+    this.colors = ['red', 'blue'];
+  }
+  
+  say() {
+    console.log('hello');
+  }
+}
+
+class Child extends Parent {
+  constructor(name, age) {
+    super(name);           // 必须先调用super
+    this.age = age;
+  }
+  
+  play() {
+    console.log('playing');
+  }
+}
+```
+
+**多重继承**
+
+```javascript
+const Mixin1 = { method1() {} };
+const Mixin2 = { method2() {} };
+
+class MyClass { /* ... */ }
+Object.assign(MyClass.prototype, Mixin1, Mixin2);
+```
+
+# 深拷贝/浅拷贝
+
+- 浅拷贝：拷贝对象，属性是引用类型，两个对象共享一块内存，修改一个对影响另一个.
+  Object.assign(target, ...sources) 或  {...obj} 或 Array.slice()或[...arr]
+
+- 深拷贝：会递归地复制原始对象的所有属性，生成是一个新对象
+
+  ```javascript
+  JSON.parse(JSON.stringify(obj)) 
+  ```
+
+  **边界状况**：建议用三方库lodash.cloneDeep
+  1、基本数据类型：null，undefined，number，string，boolean直接返回
+  2、对象，数组 需要递归拷贝
+  3、循环引用，使用WeakMap 记录已处理的对象。
+
+  ```javascript
+  function deepCopy(obj, cache = new WeakMap()) {
+    if (typeof obj !== 'object' || obj === null) return obj;
+    
+    // 处理循环引用
+    if (cache.has(obj)) return cache.get(obj);
+    
+    const copy = Array.isArray(obj) ? [] : {};
+    cache.set(obj, copy); // 缓存当前对象
+    
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        copy[key] = deepCopy(obj[key], cache); // 递归并传递缓存
+      }
+    }
+    
+    return copy;
+  }
+  
+  // 测试循环引用
+  const a = {};
+  a.b = a; // 循环引用
+  const copy = deepCopy(a);
+  console.log(copy.b === copy); // 输出: true（正确处理循环引用）
+  ```
+
+  4、特殊对象：日期对象（Date）return new Date(obj.getTime());正则表达式（RegExp）return new RegExp(obj);Map/Set；Function
+  5、不可枚举属性，Symbol
+  6、原型链
 
 # 作用域let，const，var
 
@@ -1916,19 +2561,21 @@ Object.prototype 是原型链的终端
 
 # 闭包
 
-- what
+- **定义**：一个函数有权访问另一个函数作用域的中变量
 
-​	有权访问另一个函数作用域的中变量的函数
+​	js变量作用域属于函数作用域，函数执行完，作用域会被清理，内存被回收。
 
-​	js变量作用域属于函数作用域，函数执行完，作用域会被清理，内存被回收。 闭包的函数是建立在内部子函数（闭包）上，它可以访问上级作用域，上级执行完，作用域也不会被清理。 
+​	but 闭包的函数是建立在内部子函数（闭包）上，它可以访问上级作用域，上级执行完，作用域也不会被清理。 
 
-- 特性
+- **特性**
 
   可以访问定义它们的外部变量
 
   保护：区域中私有变量不受外界影响，避免全局变量污染
 
   保存：将外部作用域中变量存储在内存中，而非函数
+
+- **缺点**：内存泄露
 
 - 实现
 
@@ -1980,9 +2627,7 @@ Object.prototype 是原型链的终端
   }
   ```
 
-- bad：内存泄漏
-
-- good：延长局部变量生命周期
+  
 
 # 垃圾回收
 
@@ -1990,13 +2635,12 @@ Object.prototype 是原型链的终端
 
 - 浏览器有垃圾回收机制，定期找出不继续使用的变量来释放
 
-- method: 标记清除
+- method: 
+  - 标记清除：从根对象开始，递归标记所有可达对象。清除未被标记的对象（即不可达对象）。
 
-  - 变量进入执行环境，被“标记进入”。离开时被“标记离开”。会销毁离开的值并释放内存
+  - 标记整理算法（优化版标记清楚）：在清除阶段后，将存活对象移动到连续内存空间，避免碎片
 
-  - google浏览器：不定时查找当前内存引用，无占用则清除
-
-  - ie浏览器：引用计数。占用1次+1，移除-1。0时回收
+  - 分代回收算法：新对象分配在新生代（短期对象（如局部变量），回收频繁）；多次回收后仍存活的对象晋升到老生代；对老生代采用更高效的标记整理算法
 
 - 优化：手动释放，内存优化，取消占用内存
 
@@ -2123,64 +2767,6 @@ catch 只是捕获异常，catch 并不能终止当前 Promise 的链式调用�
 
   
 
-# 深拷贝/浅拷贝
-
-- 浅拷贝：拷贝对象，属性是引用类型，两个对象共享一块内存，修改一个对影响另一个.
-  Object.assign(target, ...sources) 或  {...obj} 或 Array.slice()或[...arr]
-
-- 深拷贝：会递归地复制原始对象的所有属性，生成是一个新对象
-
-  ```javascript
-  JSON.parse(JSON.stringify(obj)) 
-  //或
-  function deepCopy(obj,cache = new WeakMap()) { 
-  	if (obj === null || typeof obj !== 'object') {return obj;} //obj为原始值，直接返回
-    if (cache.has(obj)) return cache.get(obj); // ******处理循环引用
-  	const copy = Array.isArray(obj) ? [] : {};    
-    cache.set(obj, copy); // ******缓存当前对象
-    for (const key in obj) {    
-      if (obj.hasOwnProperty(key)) {    // 只拷贝自身属性   
-        copy[key] = deepCopy(obj[key]); // 递归复制    
-      }  
-    }    
-    return copy;}
-  ```
-
-  **边界状况**：建议用三方库lodash.cloneDeep
-  1、基本数据类型：null，undefined，number，string，boolean直接返回
-  2、对象，数组 需要递归拷贝
-  3、循环引用，使用WeakMap 记录已处理的对象。
-
-  ```
-  function deepCopy(obj, cache = new WeakMap()) {
-    if (typeof obj !== 'object' || obj === null) return obj;
-    
-    // 处理循环引用
-    if (cache.has(obj)) return cache.get(obj);
-    
-    const copy = Array.isArray(obj) ? [] : {};
-    cache.set(obj, copy); // 缓存当前对象
-    
-    for (const key in obj) {
-      if (obj.hasOwnProperty(key)) {
-        copy[key] = deepCopy(obj[key], cache); // 递归并传递缓存
-      }
-    }
-    
-    return copy;
-  }
-  
-  // 测试循环引用
-  const a = {};
-  a.b = a; // 循环引用
-  const copy = deepCopy(a);
-  console.log(copy.b === copy); // 输出: true（正确处理循环引用）
-  ```
-
-  4、特殊对象：日期对象（Date）return new Date(obj.getTime());正则表达式（RegExp）return new RegExp(obj);Map/Set；Function
-  5、不可枚举属性，Symbol
-  6、原型链
-
 # useStrict
 
 1、禁止使用未声明变量，重复声明 
@@ -2214,99 +2800,6 @@ const curriedAdd = curry(add);
 //curriedAdd(1)(2)(3)，curriedAdd(1, 2)(3)，curriedAdd(1)(2, 3)
 ```
 
-# 继承
-
-**原型链继承**
-
-```
-function Parent() {
-  this.name = 'parent';
-  this.colors = ['red', 'blue'];
-}
-
-Parent.prototype.say = function() {
-  console.log('hello');
-}
-
-function Child() {}
-Child.prototype = Object.create(Parent.prototype); // 直接使用父类实例作为子类原型
-Child.prototype.constructor = Child;
-```
-
-**组合继承**
-
-```
-function Parent(name) {
-  this.name = name;
-  this.colors = ['red', 'blue'];
-}
-
-Parent.prototype.say = function() {
-  console.log('hello');
-}
-
-function Child(name, age) {
-  Parent.call(this, name); // 第一次调用父类构造函数
-  this.age = age;
-}
-
-Child.prototype = new Parent(); // 第二次调用父类构造函数
-Child.prototype.constructor = Child;
-```
-
-**寄生组合继承**
-
-```
-function Parent(name) {
-  this.name = name;
-  this.colors = ['red', 'blue'];
-}
-
-Parent.prototype.say = function() {
-  console.log('hello');
-}
-
-function Child(name, age) {
-  Parent.call(this, name); // 继承属性
-  this.age = age;
-}
-
-// 继承原型
-Child.prototype = Object.create(Parent.prototype);
-Child.prototype.constructor = Child;
-
-// 子类可以添加自己的方法
-Child.prototype.play = function() {
-  console.log('playing');
-};
-```
-
-**类继承**
-
-```
-class Parent {
-  constructor(name) {
-    this.name = name;
-    this.colors = ['red', 'blue'];
-  }
-  
-  say() {
-    console.log('hello');
-  }
-}
-
-class Child extends Parent {
-  constructor(name, age) {
-    super(name); // 必须先调用super
-    this.age = age;
-  }
-  
-  play() {
-    console.log('playing');
-  }
-}
-```
-
 # 数组操作类型常用方法
 
 | **分类**        | **方法及示例**                                               |
@@ -2334,19 +2827,71 @@ class Child extends Parent {
 
 # 遍历for
 
-| **方法**       | **速度（大致排序）** | **可中断性**                                       | **适用数据结构**             |
-| -------------- | -------------------- | -------------------------------------------------- | ---------------------------- |
-| **for 循环**   | 最快                 | ✅ `break`（完全终止）和 `continue`（跳过当前迭代） | 数组                         |
-| **for...of**   | 较快                 | ✅                                                  | 可迭代对象（数组、Set、Map） |
-| **forEach**    | 中等                 | ❌return仅跳过当前回调，无法终止循环                | 数组                         |
-| **map/filter** | 较慢（需创建新数组） | ❌                                                  | 数组                         |
-| **for...in**   | 最慢（遍历原型链）   | ✅                                                  | 对象                         |
+| **方法**       | **速度（大致排序）**   | **可中断性**                                       | **适用数据结构**             |
+| -------------- | ---------------------- | -------------------------------------------------- | ---------------------------- |
+| **for 循环**   | 最快                   | ✅ `break`（完全终止）和 `continue`（跳过当前迭代） | 数组                         |
+| **for...of**   | 较快                   | ✅                                                  | 可迭代对象（数组、Set、Map） |
+| **forEach**    | 中等                   | ❌return仅跳过当前回调，无法终止循环                | 数组                         |
+| **map/filter** | 较慢（需创建新数组）   | ❌                                                  | 数组                         |
+| **for...in**   | 最慢（**遍历原型链**） | ✅                                                  | 对象                         |
 
 **Object.entries()**：返回 `[key, value]` 对的数组
 
 **Object.keys()**：返回[key]数组
 
-# 获取元素位置
+# Object.
+
+|                                                  | 含义                                                         | 备注                                                         |
+| ------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **Object.assign(target, ...sources)**            | 对象中所有[可枚举](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable)的[自有属性](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn)复制到目标对象 | 原型链属性不可以拷贝                                         |
+| **Object.create(proto, propertiesObject)**       | 以一个现有对象作为原型，创建一个新对象                       | 实现继承<br />propertiesObject 可以是{   // foo 是一个常规数据属性   foo: {     writable: true,     configurable: true,     value: "hello",   }} |
+| **Object.defineProperty(obj, prop, descriptor)** | writable: 可修改<br />configurable：false。不可配置但可写的数据属性可以改，其它都不能改<br />enumerable： false；//obj.key2 undefined | Object.defineProperty(obj, "key2", {   enumerable: false,   configurable: false,   writable: false,   value: "static", }); |
+| **Object.entries(obj)**                          | 静态方法返回一个数组，包含给定对象自有的可枚举字符串键属性的键值对。<br />Object.entries({a:1,b:2})<br />[ ["a",1], ["b", 2]] | 字符串Object.entries("foo"); // [ ['0', 'f'], ['1', 'o'], ['2', 'o'] ]<br />其它基本类型返回[] |
+| **Object.freeze(obj)**                           | 不能再被更改：不能添加新的属性，不能移除现有的属性，不能更改它们的可枚举性、可配置性、可写性或值， |                                                              |
+| **Object.fromEntries()**                         | 键值对列表 转 对象                                           | const map = new Map([  ["foo", "bar"],   ["baz", 42], ]); <br />const obj = Object.fromEntries(map);<br />// { foo: "bar", baz: 42 } |
+| **Object.getOwnPropertyNames(obj)**              | 可枚举和不可枚举属性的名称，返回字符串数组                   | const arr = ["a", "b", "c"]; console.log(Object.getOwnPropertyNames(arr).sort()); // ["0", "1", "2", "length"] |
+| **Object.keys(obj)**                             | 可枚举的字符串键属性键组成的数组                             |                                                              |
+| **Object.values(obj)**                           | 可枚举字符串键属性值组成的数组                               |                                                              |
+
+# CSS
+
+## 三栏布局
+
+- flex
+
+- grid
+
+```html
+display: grid;
+grid-template-columns: 200px 1fr 150px; /* 三列布局 */
+```
+
+- 浮动
+
+  ```
+  .float-container {
+    overflow: hidden; /* 清除浮动 */
+  }
+  
+  .left {
+    float: left;
+    width: 200px;
+  }
+  
+  .right {
+    float: right;
+    width: 150px;
+  }
+  
+  .main {
+    margin-left: 210px; /* 左侧栏宽度 + 间距 */
+    margin-right: 160px; /* 右侧栏宽度 + 间距 */
+  }
+  ```
+
+  
+
+## 获取元素位置
 
 ```javascript
 const element = document.getElementById('myElement');  //getElementsByClassName,querySelector
@@ -2357,7 +2902,7 @@ bottom: rect.bottom,
 left: rect.left + window.scrollX
 ```
 
-# 判断是否是子元素
+## 判断是否是子元素
 
 ```javascript
 // a在b内部
@@ -2374,11 +2919,19 @@ function isChildOf(a, b) {
 const isChild = a.closest('#b') === b; // 假设 b 的 ID 是 'b'
 ```
 
-# 水平垂直居中
+## 水平垂直居中
 
 ![img](https://api2.mubu.com/v3/document_image/28886397_4bb484cd-aa3f-4f86-f132-db99265d8c14.png)
 
-# flex
+## flex
+
+**flex: 1**
+
+```
+flex-grow: 1;    /* 允许元素增长以填充可用空间 */大的占的比例大
+flex-shrink: 1;  /* 允许元素缩小以适应容器 */0不缩
+flex-basis: 0%;  /* 元素的初始大小为 0 */
+```
 
 - 容器6个属性
   - flex-direction属性决定主轴的方向
@@ -2399,15 +2952,7 @@ const isChild = a.closest('#b') === b; // 假设 b 的 ID 是 'b'
     - 该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。
   - align-self 允许单个项目有与其他项目不一样的对齐方式。可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
 
-**flex: 1**
-
-```
-flex-grow: 1;    /* 允许元素增长以填充可用空间 */
-flex-shrink: 1;  /* 允许元素缩小以适应容器 */
-flex-basis: 0%;  /* 元素的初始大小为 0 */
-```
-
-# css 选择器的优先级
+## css 选择器的优先级
 
 !important > 行内样式 > id选择器 > 类选择器 > 标签选择器 > 通配符选择器 > 继承 > 浏览器默认样式
 
@@ -2427,7 +2972,7 @@ flex-basis: 0%;  /* 元素的初始大小为 0 */
 
 相同：后定义的优先级高
 
-# 行内标签、块内标签
+## 行内标签、块内标签
 
 **块标签：div p h1-h6 hr ul ol li dl dd dt form** 
 
@@ -2467,7 +3012,7 @@ display：inline（转为行内元素）
 
 注意：当元素浮动（float）时会转化成行内块元素特点。
 
-# **position属性值**
+## **position属性值**
 
 1. **static**（默认值）：正常文档流，`top`、`right`、`bottom`、`left` 和 `z-index` 属性无效。
 2. **relative**：正常文档流，通过 `top`、`right`、`bottom`、`left` 调整位置，相对于其正常位置偏移。可设置 `z-index` 
@@ -2475,7 +3020,7 @@ display：inline（转为行内元素）
 4. **fixed**：脱离文档流，定位相对于**浏览器视口**，同2。用于实现固定导航栏、悬浮按钮等。
 5. **sticky**：正常文档流，滚动到特定位置时变为固定定位。必须有`top`、`right`、`bottom`、`left`。用于实现粘性标题、侧边栏
 
-# 伪元素、伪类
+## 伪元素、伪类
 
 | **对比维度**     | **伪元素**                                                   | **伪类**                                                     |
 | ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2486,7 +3031,7 @@ display：inline（转为行内元素）
 | **是否生成内容** | 可生成新内容（如 `::before`/`::after`），必须设置 content 属性 | 不生成新内容，仅匹配状态                                     |
 | **常见用途**     | - 清除浮动（`::after`） - 添加装饰性内容 - 操作文本首字母 / 行 | - 交互状态（`:hover`/`:focus`） - 结构伪类（`:nth-child`） - 动态状态（`:disabled`） |
 
-# BFC
+## BFC
 
 **BFC（Block Formatting Context）** 是 CSS 中一种独立的渲染区域，它规定了内部元素如何布局，以及与外部元素的交互规则。
 
@@ -2501,7 +3046,13 @@ display：inline（转为行内元素）
 5. **overflow 非默认值**：`overflow` 值为 `auto`/`scroll`/`hidden`（非 `visible`）。
 6. **弹性 / 网格容器**：`display` 值为 `flex`/`grid` 及其衍生值的直接子元素。
 
-# **盒模型**
+## 高度坍塌
+
+发生在父元素包含浮动（float）子元素或绝对定位（absolute/fixed）子元素时，父元素无法正确计算高度，导致布局混乱
+
+解决：清除浮动clear:both、BFC、使用flex
+
+## **盒模型**
 
 **标准盒模型**
 
@@ -2517,30 +3068,83 @@ display：inline（转为行内元素）
   box-sizing: border-box
   ```
 
-# type和interface
+## 1px问题
 
-| **特性**            | **`interface`** | **`type`**                 |
-| ------------------- | --------------- | -------------------------- |
-| 重复定义合并        | ✅（自动合并）   | ❌（报错）                  |
-| 定义基本类型        | ❌               | ✅（如 `type ID = string`） |
-| 定义联合 / 交叉类型 | ❌               | ✅（如 `type A = B & C`）   |
-| 类实现              | ✅               | 仅支持对象类型的 type      |
-| 扩展方式            | `extends`       | 交叉类型 `&`               |
-| 映射类型 / 条件类型 | ❌               | ✅                          |
+问题：高清设备的设备像素比 DPR是2或3，造成1px会渲染2或3个物理像素
 
-# any和unknow
+1、transform: scale
 
-any：任何类型，不推荐
+```html
+/* 适配 设备像素比 DPR=2 的设备 */
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .element::after {
+    transform: scale(0.5);
+  }
+}
+```
 
-unknow：any的安全写法，使用前先校验类型
+浏览器不支持小数，所以0.5px也会是1
 
-# TCP和UDP
+2、`viewport`，全局生效可能会有布局错乱问题；需要动态计算 DPR 并调整 `viewport`，兼容性较差
 
-| 特性         | TCP                          | UDP                         |
-| ------------ | ---------------------------- | --------------------------- |
-| **连接性**   | 面向连接（三次握手）         | 无连接（直接发送）          |
-| **可靠性**   | 可靠（确认机制、重传、排序） | 不可靠（可能丢包、乱序）    |
-| **传输效率** | 低（头部开销 20 字节）       | 高（头部开销 8 字节）       |
-| **传输方式** | 字节流（无边界）             | 数据报（有边界，不拆分）    |
-| **拥塞控制** | 有（慢启动、拥塞避免）       | 无（可能导致网络拥塞）      |
-| **应用场景** | HTTP、SMTP、FTP、数据库      | DNS、视频流、实时游戏、直播 |
+```
+<meta name="viewport">` 的 `initial-scale
+DPR2的是initial-scale=0.5
+```
+
+# Typescript
+
+添加静态类型、类、接口和 模块 等功能，更容易进行维护和扩展
+
+> **概念**
+>
+> 类型声明：显示指定类型
+>
+> 类型推断：ts根据赋值推断
+>
+> 枚举：命名常量的一种方式 enum Mytype{}，比对象映射严格。
+>
+> 联合类型：一个值可以是多个类型中一种。 ｜
+>
+> 交叉类型：包含多个类型特性。 &
+
+
+
+## type和interface
+
+| **特性**            | **`interface`**接口：定义了契约，可在多地共享 | **`type`**类型别名：给一个类型起名字，多地使用 |
+| ------------------- | --------------------------------------------- | ---------------------------------------------- |
+| 重复定义合并        | ✅（自动合并）                                 | ❌（报错）                                      |
+| 定义基本类型        | ❌                                             | ✅（如 `type ID = string`）                     |
+| 定义联合 / 交叉类型 | ❌                                             | ✅（如 `type A = B & C`）                       |
+| 类实现              | ✅                                             | 仅支持对象类型的 type                          |
+| 扩展方式            | `extends`                                     | 交叉类型 `&`                                   |
+| 映射类型 / 条件类型 | ❌                                             | ✅                                              |
+
+## 泛型 & any & unknow
+
+**泛型T**：允许在定义函数、类或接口时不预先指定具体类型，而是在使用时动态传入类型。增加代码的灵活性和重用性。
+
+**any**：任何类型，不推荐
+
+**unknow**：any的安全写法，使用前先校验类型
+
+**泛型和any区别**：保持类关联信息，传入和返回类型关联。any不校验。
+
+```javascript
+function printName<T extends { name: string }>(obj: T) {  
+	console.log(obj.name); // 确保 obj 有 name 属性 
+}
+```
+
+## 数据类型
+
+基本类型：number,  string, boolean, null, undefined, symbol
+
+复合类型：array, tuple（元祖：固定数量和类型的数组）, enum
+
+对象类型：object, interface 
+
+函数类型：function, void, any
+
+高级类型：联合，交叉
