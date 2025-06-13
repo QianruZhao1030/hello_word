@@ -509,6 +509,19 @@ function dfs(node, visited = new Set()) {
 }
 ```
 
+### [路径总和](https://leetcode.cn/problems/path-sum/)
+
+```javascript
+// 递归
+var hasPathSum = function(root, targetSum) {
+    if(!root)return false
+    if(root.left == null && root.right == null){
+        return targetSum - root.val == 0
+    }
+    return hasPathSum(root.left, targetSum-root.val) || 		hasPathSum(root.right, targetSum-root.val)
+};
+```
+
 ### LRU(最近最少使用) 缓存
 
 最近最少使用的淘汰，Map.set是在后面加，所以时间最长没用的就是map的第一个元素
@@ -542,5 +555,45 @@ LRUCache.prototype.put = function(key, value) {
         this.cache.delete(this.cache.keys().next().value) 
     }
 };
+```
+
+### 排序
+
+```javascript
+// 冒泡O(n²)：比较相邻元素并交换位置，将最大（或最小）的元素逐步 “冒泡” 到数组末尾。
+function bubbleSort(arr) {
+  let n = arr.length;
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]; // ES6 交换
+      }
+    }
+  }
+  return arr;
+}
+```
+
+### 进制转换
+
+```javascript
+// 先转10，再转其它进制
+function convertBase(numStr, fromRadix, toRadix) {
+  const decimal = parseInt(numStr, fromRadix); 
+  return decimal.toString(toRadix);
+}
+
+//10-其它，除基取余法
+function decimalToAny(num, radix) {
+  if (num === 0) return "0";
+  let result = [];
+  while (num > 0) {
+    const remainder = num % radix;  // 当前余数
+    result.unshift(remainder);      // 余数存入数组头部（保证倒序）
+    num = Math.floor(num / radix);  // 更新为商
+  }
+  return result.join('');
+}
+
 ```
 
