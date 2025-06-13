@@ -3148,3 +3148,36 @@ function printName<T extends { name: string }>(obj: T) {
 函数类型：function, void, any
 
 高级类型：联合，交叉
+
+# 大文件上传
+
+1、文件切片：切成5-10M，文件数组是[{index,data, hash}]
+
+```
+// 文件分片伪代码
+const chunkSize = 5 * 1024 * 1024; // 5MB
+let offset = 0;
+while(offset < file.size) {
+  const chunk = file.slice(offset, offset + chunkSize);
+  chunks.push({
+    index: offset / chunkSize,
+    data: chunk,
+    hash: await calculateHash(chunk) // 计算分片哈希
+  });
+  offset += chunkSize;
+}
+```
+
+2、实现断点续传：  上传前计算每一块的hash。然后向服务端查询进度，已经上传的hash。最后仅上传确实部分hash文件。
+
+```
+// 检查上传进度伪代码
+const response = await api.checkUploadProgress(fileHash);
+const missingChunks = chunks.filter(c => !response.uploadedIndexes.includes(c.index));
+```
+
+3、并发控制和上传优化：设置3-5并发上传通道，自动重试失败分片，提供暂停继续功能。
+
+优化：可以根据网络环境动态分片大小。服务端合并分片进行完整性校验
+
+
