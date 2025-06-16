@@ -907,7 +907,101 @@ Tree-shaking是一种消除未使用代码的技术，
 ```javascript
 Set-Cookie: Domain=example.com; Path=/api; Secure; HttpOnly; SameSite=Strict
 ```
+# js如何执行异步操作
+- 回调函数（Callback）： 作为参数传递，会造成回调地狱
+- Promise
+- async.await
+- 时间监听：处理重复事件，用户操作
+- Web Workers（浏览器）：是浏览器提供的​​后台脚本运行环境​​，允许在独立线程中执行 JavaScript 代码，实现真正的并发处理能力，避免阻塞主线程。例如处理大数据、复杂算法或高频计算时，使用 postMessage 通信传递结果。尤其适合与 Canvas 图像处理、数据分析等场景结合。不能访问dom。
 
+  **底层原理： 事件循环**
+# eventloop 事件循环
+
+事件循环是 JavaScript 实现异步编程的核心机制。由于 JS 是单线程语言，它通过事件循环在​​主线程执行同步代码​​的同时，利用​​任务队列​​管理异步任务（如网络请求、定时器），实现非阻塞执行。
+
+**​​关键组件​​**
+​​调用栈（Call Stack）​​：执行同步代码（后进先出）
+​​任务队列（Task Queue）​​：分为宏任务队列（MacroTask Queue）和微任务队列（MicroTask Queue）
+​​事件循环（Event Loop）​​：持续检查调用栈是否为空，按规则将队列中的任务推入栈执行
+
+**运行机制**
+1. 执行同步代码（调用栈）
+2. 清空所有**微任务**（如 `Promise.then`、`MutationObserver`）
+3. 执行一个**宏任务**（如 `setTimeout`、`DOM事件`）
+4. 重复步骤 2-3
+   
+**​​宏任务（MacroTask**）​​：setTimeout/setInterval，I/O 操作（如文件读取），UI 渲染（浏览器），setImmediate（Node.js）
+**微任务（MicroTask**）​：Promise.then/async/await，queueMicrotask()，MutationObserver，process.nextTick（Node.js）
+
+- node环境
+
+  - 基于v8引擎运行在js环境
+
+  - 比基本eventloop多：I/O、网络操作
+
+  - 执行顺序
+
+    - timer：setTimeout、setInterval
+
+    - pending callback：调用上一次事件循环没在 poll 阶段立刻执行，而延迟的 I/O 回调函数
+
+    - idle，prepare
+
+    - poll：检索I/O，执行回调
+
+    - check : 执⾏ setImmediate 回调
+
+    - close callbacks : 执⾏ close 事件的 callback
+
+# promise（。。）
+
+Promise 是现代 Web 异步开发的重要组成部分，基本上目前所有的 Web 应用的异步开发手段都是通过 Promise 来实现的。
+
+**概念**
+
+所谓 Promise，就是一个容器对象，里面保存着某个未来才会结束的事件（异步事件）的结果。Promise 是一个构造函数，它有三个特点：
+
+1.  Promise 有三个状态：pending（进行中）、fulfilled（成功）和 reject（失败），并且状态不受外部影响。
+2.  状态一旦改变就无法修改，并且状态只能从 pending 到 fulfilled 或者是 pending 到 reject。
+3.  Promise 一旦创建就会立即执行，不能中途取消。
+
+**用法**
+
+在 Promise 诞生之前，Web 应用中的异步开发主要采用的是回调函数的模式（详情可以参考 node.js 各个 API），回调函数的一大缺点就是，当我们的一个异步结果需要使用另外一个异步结果时，就会产生回调嵌套，一旦这样的嵌套多了，就会变成回调地狱，十分影响代码观感。
+
+而 Promise 的诞生一定程度上解决了这个问题，因为 Promise 是采用链式调用的方式，并且在 Promise 返回的 Promise 对象中的 then、catch 等一系列方法都会返回一个新的 Promise 对象。
+
+**then 方法**
+
+当 Promise 实例创建成功后，可以执行其原型上的 then 方法。then 方法接受两个参数，分别是当前 Promise 的成功回调和失败回调，并且这两个函数会自动返回一个新的 Promise 对象。
+
+then 方法的成功回调如果返回的是一个 Promise 对象，那么只有当这个 Promise 对象状态发生改变之后，才会执行下一个 then。
+
+**catch 方法**
+
+Promise 原型上还有一个 catch 方法，它会捕获在它链式之前的所有未被捕获的错误（一旦前面的错误被捕获，就不会执行）。
+
+catch 只是捕获异常，catch 并不能终止当前 Promise 的链式调用。
+
+同样的，catch 方法也会自动返回一个新的 Promise 对象，一旦显示返回一个 Promise，那么只有当这个 Promise 对象状态发生改变时，链式调用才会继续往下走。
+
+**finally 方法**
+
+在 ES8 中新加入的方法，此方法和 then、catch 不同，它不会跟踪 Promise 的状态，即不管 Promise 最终变成了什么状态，都会执行这个方法，同时 finally 不接收任何参数。
+
+同样的，finally 并不是链式调用的终点，它也会自动返回一个新的 Promise 对象。
+
+**Promise.all()** // 并发执行多个Promise，返回一个Promise，所有Promise都成功时返回成功结果，有一个失败则返回失败结
+
+**Promise.allSettled()** // 并发执行多个Promise，返回一个Promise，所有Promise都成功或失败时返回成功或失败结果 
+
+**Promise.any()** // 并发执行多个Promise，返回一个Promise，只要有一个Promise成功则返回成功结果，所有Promise都失败则返回失败结果 
+
+**Promise.race()** // 并发执行多个Promise，返回一个Promise，只要有一个Promise成功或失败则返回成功或失败结果 
+
+**Promise.resolve()** // 返回一个成功的Promise
+
+**Promise.reject()** // 返回一个失败的Promise
 
 # 浏览器渲染的线程都有哪些
 
@@ -2669,93 +2763,6 @@ Object.assign(MyClass.prototype, Mixin1, Mixin2);
 
 - 优化：手动释放，内存优化，取消占用内存
 
-# eventloop 事件循环
-
-事件循环是 JavaScript 实现异步编程的核心机制。由于 JS 是单线程语言，它通过事件循环在​​主线程执行同步代码​​的同时，利用​​任务队列​​管理异步任务（如网络请求、定时器），实现非阻塞执行。
-
-**​​关键组件​​**
-​​调用栈（Call Stack）​​：执行同步代码（后进先出）
-​​任务队列（Task Queue）​​：分为宏任务队列（MacroTask Queue）和微任务队列（MicroTask Queue）
-​​事件循环（Event Loop）​​：持续检查调用栈是否为空，按规则将队列中的任务推入栈执行
-
-**运行机制**
-1. 执行同步代码（调用栈）
-2. 清空所有**微任务**（如 `Promise.then`、`MutationObserver`）
-3. 执行一个**宏任务**（如 `setTimeout`、`DOM事件`）
-4. 重复步骤 2-3
-   
-**​​宏任务（MacroTask**）​​：setTimeout/setInterval，I/O 操作（如文件读取），UI 渲染（浏览器），setImmediate（Node.js）
-**微任务（MicroTask**）​：Promise.then/async/await，queueMicrotask()，MutationObserver，process.nextTick（Node.js）
-
-- node环境
-
-  - 基于v8引擎运行在js环境
-
-  - 比基本eventloop多：I/O、网络操作
-
-  - 执行顺序
-
-    - timer：setTimeout、setInterval
-
-    - pending callback：调用上一次事件循环没在 poll 阶段立刻执行，而延迟的 I/O 回调函数
-
-    - idle，prepare
-
-    - poll：检索I/O，执行回调
-
-    - check : 执⾏ setImmediate 回调
-
-    - close callbacks : 执⾏ close 事件的 callback
-
-# promise（。。）
-
-Promise 是现代 Web 异步开发的重要组成部分，基本上目前所有的 Web 应用的异步开发手段都是通过 Promise 来实现的。
-
-**概念**
-
-所谓 Promise，就是一个容器对象，里面保存着某个未来才会结束的事件（异步事件）的结果。Promise 是一个构造函数，它有三个特点：
-
-1.  Promise 有三个状态：pending（进行中）、fulfilled（成功）和 reject（失败），并且状态不受外部影响。
-2.  状态一旦改变就无法修改，并且状态只能从 pending 到 fulfilled 或者是 pending 到 reject。
-3.  Promise 一旦创建就会立即执行，不能中途取消。
-
-**用法**
-
-在 Promise 诞生之前，Web 应用中的异步开发主要采用的是回调函数的模式（详情可以参考 node.js 各个 API），回调函数的一大缺点就是，当我们的一个异步结果需要使用另外一个异步结果时，就会产生回调嵌套，一旦这样的嵌套多了，就会变成回调地狱，十分影响代码观感。
-
-而 Promise 的诞生一定程度上解决了这个问题，因为 Promise 是采用链式调用的方式，并且在 Promise 返回的 Promise 对象中的 then、catch 等一系列方法都会返回一个新的 Promise 对象。
-
-**then 方法**
-
-当 Promise 实例创建成功后，可以执行其原型上的 then 方法。then 方法接受两个参数，分别是当前 Promise 的成功回调和失败回调，并且这两个函数会自动返回一个新的 Promise 对象。
-
-then 方法的成功回调如果返回的是一个 Promise 对象，那么只有当这个 Promise 对象状态发生改变之后，才会执行下一个 then。
-
-**catch 方法**
-
-Promise 原型上还有一个 catch 方法，它会捕获在它链式之前的所有未被捕获的错误（一旦前面的错误被捕获，就不会执行）。
-
-catch 只是捕获异常，catch 并不能终止当前 Promise 的链式调用。
-
-同样的，catch 方法也会自动返回一个新的 Promise 对象，一旦显示返回一个 Promise，那么只有当这个 Promise 对象状态发生改变时，链式调用才会继续往下走。
-
-**finally 方法**
-
-在 ES8 中新加入的方法，此方法和 then、catch 不同，它不会跟踪 Promise 的状态，即不管 Promise 最终变成了什么状态，都会执行这个方法，同时 finally 不接收任何参数。
-
-同样的，finally 并不是链式调用的终点，它也会自动返回一个新的 Promise 对象。
-
-**Promise.all()** // 并发执行多个Promise，返回一个Promise，所有Promise都成功时返回成功结果，有一个失败则返回失败结
-
-**Promise.allSettled()** // 并发执行多个Promise，返回一个Promise，所有Promise都成功或失败时返回成功或失败结果 
-
-**Promise.any()** // 并发执行多个Promise，返回一个Promise，只要有一个Promise成功则返回成功结果，所有Promise都失败则返回失败结果 
-
-**Promise.race()** // 并发执行多个Promise，返回一个Promise，只要有一个Promise成功或失败则返回成功或失败结果 
-
-**Promise.resolve()** // 返回一个成功的Promise
-
-**Promise.reject()** // 返回一个失败的Promise
 
 # 普通函数/箭头函数/new
 
