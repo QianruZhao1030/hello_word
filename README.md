@@ -2644,23 +2644,23 @@ Object.assign(MyClass.prototype, Mixin1, Mixin2);
 
 - 优化：手动释放，内存优化，取消占用内存
 
-# eventloop
+# eventloop 事件循环
 
-- why
+事件循环是 JavaScript 实现异步编程的核心机制。由于 JS 是单线程语言，它通过事件循环在​​主线程执行同步代码​​的同时，利用​​任务队列​​管理异步任务（如网络请求、定时器），实现非阻塞执行。
 
-  js单线程，防止函数执行时间过长阻塞代码。
+**​​关键组件​​**
+​​调用栈（Call Stack）​​：执行同步代码（后进先出）
+​​任务队列（Task Queue）​​：分为宏任务队列（MacroTask Queue）和微任务队列（MicroTask Queue）
+​​事件循环（Event Loop）​​：持续检查调用栈是否为空，按规则将队列中的任务推入栈执行
 
-- 运行机制
-
-  1、会先执行同步栈代码 2、执行异步队列中微任务(清空)， 3、执行宏任务 for（取一个宏，放进任务队列执行，执行微）。
-
-- 宏任务
-
-  ajax、setTimeout、setInterval、script
-
-- 微任务
-
-  promise.then、MutationObserver   process.nextTick
+**运行机制**
+1. 执行同步代码（调用栈）
+2. 清空所有**微任务**（如 `Promise.then`、`MutationObserver`）
+3. 执行一个**宏任务**（如 `setTimeout`、`DOM事件`）
+4. 重复步骤 2-3
+   
+**​​宏任务（MacroTask**）​​：setTimeout/setInterval，I/O 操作（如文件读取），UI 渲染（浏览器），setImmediate（Node.js）
+**微任务（MicroTask**）​：Promise.then/async/await，queueMicrotask()，MutationObserver，process.nextTick（Node.js）
 
 - node环境
 
