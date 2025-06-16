@@ -1500,15 +1500,16 @@ patch核心是是同层、深度优先对比，跨层就是不同节点。两节
 
 # vue-router路由
 
-**单页面应用（SPA）路由管理器**，主要是实现页面级组件的动态加载（路由组件渲染`<router-view>`），url和视图同步，导航控制（前进后退跳转）。
 
-分为两种路由模式:
+### hash & history
 
-**hash**：url中带#，核心是hash改变时，通过**监听`haschange`事件**来触发事件更新视图，无需浏览器重新加载。通过`window.location.hash`来修改
+**hash**：url中带#，核心是hash改变时，通过**监听`haschange`事件**来触发事件更新视图，不触发页面刷新*。通过`window.location.hash`来修改。window.onhashchange监听到hash。**SEO 不友好**
 
-**history**：使用html5 history api，核心是**监听`popstate`事件**来判断用户前进后退来更新视图。通过pushState和replaceState操作，不处罚页面刷新
+**history**：使用html5 history api，核心是**监听`popstate`事件**来判断用户前进后退来更新视图，需要服务器支持。通过pushState和replaceState操作，无刷新页面刷新。可设置title。**CSRF 风险**：需防范伪造历史记录攻击。不支持IE9以下
 
 `history.pushState(state, title, path)`
+
+**单页面应用（SPA）路由管理器**，主要是实现页面级组件的动态加载（路由组件渲染`<router-view>`），url和视图同步，导航控制（前进后退跳转）。
 
 **导航模式**
 
