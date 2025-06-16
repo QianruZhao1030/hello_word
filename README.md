@@ -2327,6 +2327,61 @@ action是个处理对象，可以需要中间件来扩展异步处理等操作�
 - 使用useRef() 创建不变的引用对象
 - 使用React.Fragment 包裹组件，避免额外DOM节点
 - 使用React.StrictMode 包裹组件，检查潜在问题
+# ES6
+
+ES6是JavaScript的重大升级，我项目中全面使用了其核心特性：用`const/let`替代`var`提高可靠性；使用箭头函数和模板字符串简化代码；用Promise配合async/await处理异步逻辑；通过解构和扩展运算符高效操作数据。对模块化、类和现代数据结构(Map/Set)的应用也大幅提升了代码质量和开发效率。
+
+- `let` 与 `const`
+
+- 箭头函数
+
+- 模板字符串： `Hello ${name}
+
+- 解构赋值：数据提取新模式
+
+- 函数参数：默认值
+
+- 扩展运算符：解构性语法 [...arr1, ...arr2] {...obj, a:1}
+
+- Class 类：面向对象语法糖
+
+- Promise
+
+- 模块化：import/export
+
+- Symbol：唯一标识符
+
+- 集合类型：Set & Map
+
+  ``````
+  set.add() ;set.has();   set.size()
+  map.set(); map.has();   map.get()
+  ``````
+
+- Iterators & Generators:
+
+  ``````javascript
+  const numbers = [1, 2, 3];
+  const iterator = numbers[Symbol.iterator]();
+  console.log(iterator.next()); // {value: 1, done: false}
+  console.log(iterator.next()); // {value: 2, done: false}
+  console.log(iterator.next()); // {value: 3, done: false}
+  console.log(iterator.next()); // {value: undefined, done: true}
+  
+  function* idGenerator() {
+      let id = 1;
+      while (true) {
+          yield id++;
+      }
+  }
+  
+  const gen = idGenerator();
+  console.log(gen.next().value); // 1
+  console.log(gen.next().value); // 2
+  console.log(gen.next().value); // 3
+  ``````
+
+  
 
 # this
 
