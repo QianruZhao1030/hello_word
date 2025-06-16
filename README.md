@@ -873,7 +873,8 @@ Tree-shaking是一种消除未使用代码的技术，
 
 # Cookie,LocalStorage,sessionStorage
 
-![image-20250613163230946](/Users/burst/Library/Application Support/typora-user-images/image-20250613163230946.png)
+<img width="425" alt="image" src="https://github.com/user-attachments/assets/ec75c4b4-a0f0-4dcd-84e3-dc4122499c2a" />
+
 
 | **特性**         | **Cookie**                                                   | **LocalStorage**                                             | **SessionStorage**                                           |
 | ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
