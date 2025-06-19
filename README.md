@@ -3270,3 +3270,29 @@ const missingChunks = chunks.filter(c => !response.uploadedIndexes.includes(c.in
 
 优化：可以根据网络环境动态分片大小。服务端合并分片进行完整性校验
 
+
+# 小程序
+问题:
+1原生组件css差异(比如按钮)
+解法:需要根据渲染引擎写不同css进行适配
+2skyline rpx到px有精度问题，与webview有差距
+解法:其中对于webview精度优化增加covertrpxtovw。skyline可能也需要适配
+3 判断当前渲染引擎(版本支持+ab)
+解法:getSkylinelnfoSync
+4 自定义组件不支持v-show
+解法:页面中大量出现，更改方式外层套视图，风险较大，整体样式(webview+skyline)应该都需要兼容
+## uniapp和原生差距
+1. **核心定位不同**：
+   - UniApp是**跨平台框架**，解决多端重复开发问题
+   - 原生开发是**平台定制方案**，追求极限性能和深度集成
+
+2. **技术差异**：
+   - 开发语言：Vue vs 平台DSL
+   - 性能：原生更优但UniApp可达90%原生体验
+   - 生态：UniApp有uView等跨端组件库
+
+3. **选型建议**：
+   - 中小项目/快速验证 → UniApp
+   - 重度依赖平台能力/性能敏感 → 原生
+<img width="802" alt="image" src="https://github.com/user-attachments/assets/8a703d93-34f7-4f74-a111-ddf69cfbfd0b" />
+
