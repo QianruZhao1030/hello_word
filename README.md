@@ -3301,42 +3301,41 @@ const missingChunks = chunks.filter(c => !response.uploadedIndexes.includes(c.in
 
 ## uniapp & taro
 1、设计理念差异​​
+
 ​​UniApp（DCloud 出品）​​
-​​核心思想​​：通过 Vue 语法扩展 + 自研编译器，将代码编译为各平台原生代码
-​​技术栈绑定​​：主要面向 Vue 开发者（支持 Vue2/Vue3）
-​​生态定位​​：​​「大而全」​​ 的解决方案（内置路由、状态管理、UI 库等）
+- 核心思想​​：通过 Vue 语法扩展 + 自研编译器，将代码编译为各平台原生代码
+- 技术栈绑定​​：主要面向 Vue 开发者（支持 Vue2/Vue3）
+- 生态定位​​：​​「大而全」​​ 的解决方案（内置路由、状态管理、UI 库等）
+
 ​​Taro（京东出品）​​
-​​核心思想​​：基于 React 语法规范，通过编译时转换兼容多平台（支持 React/Vue/Nerv 等）
-​​技术栈开放​​：不绑定特定框架（支持 React/Vue/Preact）
-​​生态定位​​：​​「灵活可插拔」​​（状态管理/UI 库需自行选择）
-​​UniApp 与 Taro 的核心区别（结构化面试回答）​​
-​​1. 设计理念差异​​
-​​UniApp（DCloud 出品）​​
-​​核心思想​​：通过 Vue 语法扩展 + 自研编译器，将代码编译为各平台原生代码
-​​技术栈绑定​​：主要面向 Vue 开发者（支持 Vue2/Vue3）
-​​生态定位​​：​​「大而全」​​ 的解决方案（内置路由、状态管理、UI 库等）
-​​Taro（京东出品）​​
-​​核心思想​​：基于 React 语法规范，通过编译时转换兼容多平台（支持 React/Vue/Nerv 等）
-​​技术栈开放​​：不绑定特定框架（支持 React/Vue/Preact）
-​​生态定位​​：​​「灵活可插拔」​​（状态管理/UI 库需自行选择）
+- 核心思想​​：基于 React 语法规范，通过编译时转换兼容多平台（支持 React/Vue/Nerv 等）
+​​- 技术栈开放​​：不绑定特定框架（支持 React/Vue/Preact）
+​​- 生态定位​​：​​「灵活可插拔」​​（状态管理/UI 库需自行选择）
+
 ​​2. 跨端能力对比​
-Uniapp 不支持鸿蒙，flutter
+- Uniapp 不支持鸿蒙，flutter
+
 3. 性能优化策略​​
+
 ​​UniApp​​
-通过 ​​逻辑层与视图层分离​​ 降低渲染压力（类似小程序架构）
-使用 ​​renderjs​​ 在 App 端运行高性能 JavaScript
-​​局限​​：H5 端性能依赖 WebView 优化
-​​Taro​​
-​​编译时优化​​：自动压缩模板/样式，删除未使用组件
-​​React Native 支持​​：直接调用原生组件（非 WebView）
-​​关键优势​​：​​动态加载​​（如 Taro.lazy 实现组件级异步加载）
+- 通过 ​​逻辑层与视图层分离​​ 降低渲染压力（类似小程序架构）
+- 使用 ​​renderjs​​ 在 App 端运行高性能 JavaScript
+​​- 局限​​：H5 端性能依赖 WebView 优化
+​​
+Taro​​
+​​- 编译时优化​​：自动压缩模板/样式，删除未使用组件
+​​- React Native 支持​​：直接调用原生组件（非 WebView）
+​​- 关键优势​​：​​动态加载​​（如 Taro.lazy 实现组件级异步加载）
+
 4. 开发体验差异​
 <img width="713" alt="image" src="https://github.com/user-attachments/assets/239045ce-a100-4c0e-ad71-9aa6cd2df52e" />
+
 5. 适用场景选择建议​​
 ​​优先选 UniApp 当​​：
 团队熟悉 Vue 技术栈
 项目需要快速覆盖主流小程序+H5+App
 期望开箱即用（避免配置复杂度）
+
 ​​优先选 Taro 当​​：
 需支持 ​​React Native / Flutter​​ 等非 WebView 平台
 项目技术栈多样化（React/Vue 混合开发）
