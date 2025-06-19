@@ -871,6 +871,9 @@ Tree-shaking是一种消除未使用代码的技术，
 
 配置：package.json 中将 sideEffects 设置为 false，模块中没有副作用才能安全删除
 
+**Tree Shaking 失效的解决方案​​**
+<img width="609" alt="image" src="https://github.com/user-attachments/assets/662f5eb0-0125-42b7-963f-0b7ae8eb7a1d" />
+
 # Cookie,LocalStorage,sessionStorage
 
 <img width="425" alt="image" src="https://github.com/user-attachments/assets/ec75c4b4-a0f0-4dcd-84e3-dc4122499c2a" />
