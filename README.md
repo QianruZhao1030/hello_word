@@ -3296,3 +3296,4 @@ const missingChunks = chunks.filter(c => !response.uploadedIndexes.includes(c.in
    - 重度依赖平台能力/性能敏感 → 原生
 <img width="802" alt="image" src="https://github.com/user-attachments/assets/8a703d93-34f7-4f74-a111-ddf69cfbfd0b" />
 
+<img width="794" alt="image" src="https://github.com/user-attachments/assets/220eff30-6dc4-4213-a5c2-85b555c605be" />
